@@ -9,351 +9,67 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
-    'Ovh_cloud_projectOrderArgs',
-    'Ovh_cloud_projectOrderDetailArgs',
-    'Ovh_cloud_projectPlanArgs',
-    'Ovh_cloud_projectPlanConfigurationArgs',
-    'Ovh_cloud_projectPlanOptionArgs',
-    'Ovh_cloud_projectPlanOptionConfigurationArgs',
-    'Ovh_cloud_project_containerregistryPlanArgs',
-    'Ovh_cloud_project_containerregistryPlanFeatureArgs',
-    'Ovh_cloud_project_containerregistryPlanRegistryLimitArgs',
-    'Ovh_cloud_project_network_privateRegionsAttributeArgs',
-    'Ovh_cloud_project_network_privateRegionsStatusArgs',
-    'Ovh_cloud_project_network_private_subnetIpPoolArgs',
-    'Ovh_cloud_project_userRoleArgs',
-    'Ovh_dbaas_logs_inputConfigurationArgs',
-    'Ovh_dbaas_logs_inputConfigurationFlowggerArgs',
-    'Ovh_dbaas_logs_inputConfigurationLogstashArgs',
-    'Ovh_dedicated_server_install_taskDetailsArgs',
-    'Ovh_domain_zoneOrderArgs',
-    'Ovh_domain_zoneOrderDetailArgs',
-    'Ovh_domain_zonePlanArgs',
-    'Ovh_domain_zonePlanConfigurationArgs',
-    'Ovh_domain_zonePlanOptionArgs',
-    'Ovh_domain_zonePlanOptionConfigurationArgs',
-    'Ovh_ip_serviceOrderArgs',
-    'Ovh_ip_serviceOrderDetailArgs',
-    'Ovh_ip_servicePlanArgs',
-    'Ovh_ip_servicePlanConfigurationArgs',
-    'Ovh_ip_servicePlanOptionArgs',
-    'Ovh_ip_servicePlanOptionConfigurationArgs',
-    'Ovh_ip_serviceRoutedToArgs',
-    'Ovh_iploadbalancingOrderArgs',
-    'Ovh_iploadbalancingOrderDetailArgs',
-    'Ovh_iploadbalancingOrderableZoneArgs',
-    'Ovh_iploadbalancingPlanArgs',
-    'Ovh_iploadbalancingPlanConfigurationArgs',
-    'Ovh_iploadbalancingPlanOptionArgs',
-    'Ovh_iploadbalancingPlanOptionConfigurationArgs',
-    'Ovh_iploadbalancing_http_farmProbeArgs',
-    'Ovh_iploadbalancing_http_routeActionArgs',
-    'Ovh_iploadbalancing_http_routeRuleArgs',
-    'Ovh_iploadbalancing_tcp_farmProbeArgs',
-    'Ovh_iploadbalancing_tcp_routeActionArgs',
-    'Ovh_iploadbalancing_tcp_routeRuleArgs',
-    'Ovh_me_installation_templateCustomizationArgs',
-    'Ovh_vrackOrderArgs',
-    'Ovh_vrackOrderDetailArgs',
-    'Ovh_vrackPlanArgs',
-    'Ovh_vrackPlanConfigurationArgs',
-    'Ovh_vrackPlanOptionArgs',
-    'Ovh_vrackPlanOptionConfigurationArgs',
+    'CloudProjectContainerregistryPlanArgs',
+    'CloudProjectContainerregistryPlanFeatureArgs',
+    'CloudProjectContainerregistryPlanRegistryLimitArgs',
+    'CloudProjectNetworkPrivateRegionsAttributeArgs',
+    'CloudProjectNetworkPrivateRegionsStatusArgs',
+    'CloudProjectNetworkPrivateSubnetIpPoolArgs',
+    'CloudProjectOrderArgs',
+    'CloudProjectOrderDetailArgs',
+    'CloudProjectPlanArgs',
+    'CloudProjectPlanConfigurationArgs',
+    'CloudProjectPlanOptionArgs',
+    'CloudProjectPlanOptionConfigurationArgs',
+    'CloudProjectUserRoleArgs',
+    'DbaasLogsInputConfigurationArgs',
+    'DbaasLogsInputConfigurationFlowggerArgs',
+    'DbaasLogsInputConfigurationLogstashArgs',
+    'DedicatedServerInstallTaskDetailsArgs',
+    'DomainZoneOrderArgs',
+    'DomainZoneOrderDetailArgs',
+    'DomainZonePlanArgs',
+    'DomainZonePlanConfigurationArgs',
+    'DomainZonePlanOptionArgs',
+    'DomainZonePlanOptionConfigurationArgs',
+    'IpServiceOrderArgs',
+    'IpServiceOrderDetailArgs',
+    'IpServicePlanArgs',
+    'IpServicePlanConfigurationArgs',
+    'IpServicePlanOptionArgs',
+    'IpServicePlanOptionConfigurationArgs',
+    'IpServiceRoutedToArgs',
+    'IploadbalancingHttpFarmProbeArgs',
+    'IploadbalancingHttpRouteActionArgs',
+    'IploadbalancingHttpRouteRuleArgs',
+    'IploadbalancingOrderArgs',
+    'IploadbalancingOrderDetailArgs',
+    'IploadbalancingOrderableZoneArgs',
+    'IploadbalancingPlanArgs',
+    'IploadbalancingPlanConfigurationArgs',
+    'IploadbalancingPlanOptionArgs',
+    'IploadbalancingPlanOptionConfigurationArgs',
+    'IploadbalancingTcpFarmProbeArgs',
+    'IploadbalancingTcpRouteActionArgs',
+    'IploadbalancingTcpRouteRuleArgs',
+    'MeInstallationTemplateCustomizationArgs',
+    'VrackOrderArgs',
+    'VrackOrderDetailArgs',
+    'VrackPlanArgs',
+    'VrackPlanConfigurationArgs',
+    'VrackPlanOptionArgs',
+    'VrackPlanOptionConfigurationArgs',
 ]
 
 @pulumi.input_type
-class Ovh_cloud_projectOrderArgs:
-    def __init__(__self__, *,
-                 date: Optional[pulumi.Input[str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectOrderDetailArgs']]]] = None,
-                 expiration_date: Optional[pulumi.Input[str]] = None,
-                 order_id: Optional[pulumi.Input[int]] = None):
-        if date is not None:
-            pulumi.set(__self__, "date", date)
-        if details is not None:
-            pulumi.set(__self__, "details", details)
-        if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
-        if order_id is not None:
-            pulumi.set(__self__, "order_id", order_id)
-
-    @property
-    @pulumi.getter
-    def date(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "date")
-
-    @date.setter
-    def date(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "date", value)
-
-    @property
-    @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectOrderDetailArgs']]]]:
-        return pulumi.get(self, "details")
-
-    @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectOrderDetailArgs']]]]):
-        pulumi.set(self, "details", value)
-
-    @property
-    @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "expiration_date")
-
-    @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "expiration_date", value)
-
-    @property
-    @pulumi.getter(name="orderId")
-    def order_id(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "order_id")
-
-    @order_id.setter
-    def order_id(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "order_id", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_projectOrderDetailArgs:
-    def __init__(__self__, *,
-                 description: Optional[pulumi.Input[str]] = None,
-                 domain: Optional[pulumi.Input[str]] = None,
-                 order_detail_id: Optional[pulumi.Input[int]] = None,
-                 quantity: Optional[pulumi.Input[str]] = None):
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if order_detail_id is not None:
-            pulumi.set(__self__, "order_detail_id", order_detail_id)
-        if quantity is not None:
-            pulumi.set(__self__, "quantity", quantity)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "domain")
-
-    @domain.setter
-    def domain(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "domain", value)
-
-    @property
-    @pulumi.getter(name="orderDetailId")
-    def order_detail_id(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "order_detail_id")
-
-    @order_detail_id.setter
-    def order_detail_id(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "order_detail_id", value)
-
-    @property
-    @pulumi.getter
-    def quantity(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "quantity")
-
-    @quantity.setter
-    def quantity(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "quantity", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_projectPlanArgs:
-    def __init__(__self__, *,
-                 duration: pulumi.Input[str],
-                 plan_code: pulumi.Input[str],
-                 pricing_mode: pulumi.Input[str],
-                 catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanConfigurationArgs']]]] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "duration")
-
-    @duration.setter
-    def duration(self, value: pulumi.Input[str]):
-        pulumi.set(self, "duration", value)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "plan_code")
-
-    @plan_code.setter
-    def plan_code(self, value: pulumi.Input[str]):
-        pulumi.set(self, "plan_code", value)
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "pricing_mode")
-
-    @pricing_mode.setter
-    def pricing_mode(self, value: pulumi.Input[str]):
-        pulumi.set(self, "pricing_mode", value)
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "catalog_name")
-
-    @catalog_name.setter
-    def catalog_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "catalog_name", value)
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanConfigurationArgs']]]]:
-        return pulumi.get(self, "configurations")
-
-    @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanConfigurationArgs']]]]):
-        pulumi.set(self, "configurations", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_projectPlanConfigurationArgs:
-    def __init__(__self__, *,
-                 label: pulumi.Input[str],
-                 value: pulumi.Input[str]):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "label")
-
-    @label.setter
-    def label(self, value: pulumi.Input[str]):
-        pulumi.set(self, "label", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[str]):
-        pulumi.set(self, "value", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_projectPlanOptionArgs:
-    def __init__(__self__, *,
-                 duration: pulumi.Input[str],
-                 plan_code: pulumi.Input[str],
-                 pricing_mode: pulumi.Input[str],
-                 catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanOptionConfigurationArgs']]]] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "duration")
-
-    @duration.setter
-    def duration(self, value: pulumi.Input[str]):
-        pulumi.set(self, "duration", value)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "plan_code")
-
-    @plan_code.setter
-    def plan_code(self, value: pulumi.Input[str]):
-        pulumi.set(self, "plan_code", value)
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "pricing_mode")
-
-    @pricing_mode.setter
-    def pricing_mode(self, value: pulumi.Input[str]):
-        pulumi.set(self, "pricing_mode", value)
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "catalog_name")
-
-    @catalog_name.setter
-    def catalog_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "catalog_name", value)
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanOptionConfigurationArgs']]]]:
-        return pulumi.get(self, "configurations")
-
-    @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_projectPlanOptionConfigurationArgs']]]]):
-        pulumi.set(self, "configurations", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_projectPlanOptionConfigurationArgs:
-    def __init__(__self__, *,
-                 label: pulumi.Input[str],
-                 value: pulumi.Input[str]):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "label")
-
-    @label.setter
-    def label(self, value: pulumi.Input[str]):
-        pulumi.set(self, "label", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[str]):
-        pulumi.set(self, "value", value)
-
-
-@pulumi.input_type
-class Ovh_cloud_project_containerregistryPlanArgs:
+class CloudProjectContainerregistryPlanArgs:
     def __init__(__self__, *,
                  code: Optional[pulumi.Input[str]] = None,
                  created_at: Optional[pulumi.Input[str]] = None,
-                 features: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanFeatureArgs']]]] = None,
+                 features: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanFeatureArgs']]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 registry_limits: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanRegistryLimitArgs']]]] = None,
+                 registry_limits: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanRegistryLimitArgs']]]] = None,
                  updated_at: Optional[pulumi.Input[str]] = None):
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -390,11 +106,11 @@ class Ovh_cloud_project_containerregistryPlanArgs:
 
     @property
     @pulumi.getter
-    def features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanFeatureArgs']]]]:
+    def features(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanFeatureArgs']]]]:
         return pulumi.get(self, "features")
 
     @features.setter
-    def features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanFeatureArgs']]]]):
+    def features(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanFeatureArgs']]]]):
         pulumi.set(self, "features", value)
 
     @property
@@ -417,11 +133,11 @@ class Ovh_cloud_project_containerregistryPlanArgs:
 
     @property
     @pulumi.getter(name="registryLimits")
-    def registry_limits(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanRegistryLimitArgs']]]]:
+    def registry_limits(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanRegistryLimitArgs']]]]:
         return pulumi.get(self, "registry_limits")
 
     @registry_limits.setter
-    def registry_limits(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_cloud_project_containerregistryPlanRegistryLimitArgs']]]]):
+    def registry_limits(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectContainerregistryPlanRegistryLimitArgs']]]]):
         pulumi.set(self, "registry_limits", value)
 
     @property
@@ -435,7 +151,7 @@ class Ovh_cloud_project_containerregistryPlanArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_containerregistryPlanFeatureArgs:
+class CloudProjectContainerregistryPlanFeatureArgs:
     def __init__(__self__, *,
                  vulnerability: Optional[pulumi.Input[bool]] = None):
         if vulnerability is not None:
@@ -452,7 +168,7 @@ class Ovh_cloud_project_containerregistryPlanFeatureArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_containerregistryPlanRegistryLimitArgs:
+class CloudProjectContainerregistryPlanRegistryLimitArgs:
     def __init__(__self__, *,
                  image_storage: Optional[pulumi.Input[int]] = None,
                  parallel_request: Optional[pulumi.Input[int]] = None):
@@ -481,7 +197,7 @@ class Ovh_cloud_project_containerregistryPlanRegistryLimitArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_network_privateRegionsAttributeArgs:
+class CloudProjectNetworkPrivateRegionsAttributeArgs:
     def __init__(__self__, *,
                  status: pulumi.Input[str],
                  openstackid: Optional[pulumi.Input[str]] = None,
@@ -521,7 +237,7 @@ class Ovh_cloud_project_network_privateRegionsAttributeArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_network_privateRegionsStatusArgs:
+class CloudProjectNetworkPrivateRegionsStatusArgs:
     def __init__(__self__, *,
                  status: pulumi.Input[str],
                  region: Optional[pulumi.Input[str]] = None):
@@ -549,7 +265,7 @@ class Ovh_cloud_project_network_privateRegionsStatusArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_network_private_subnetIpPoolArgs:
+class CloudProjectNetworkPrivateSubnetIpPoolArgs:
     def __init__(__self__, *,
                  dhcp: Optional[pulumi.Input[bool]] = None,
                  end: Optional[pulumi.Input[str]] = None,
@@ -614,7 +330,291 @@ class Ovh_cloud_project_network_private_subnetIpPoolArgs:
 
 
 @pulumi.input_type
-class Ovh_cloud_project_userRoleArgs:
+class CloudProjectOrderArgs:
+    def __init__(__self__, *,
+                 date: Optional[pulumi.Input[str]] = None,
+                 details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectOrderDetailArgs']]]] = None,
+                 expiration_date: Optional[pulumi.Input[str]] = None,
+                 order_id: Optional[pulumi.Input[int]] = None):
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if order_id is not None:
+            pulumi.set(__self__, "order_id", order_id)
+
+    @property
+    @pulumi.getter
+    def date(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "date")
+
+    @date.setter
+    def date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "date", value)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectOrderDetailArgs']]]]:
+        return pulumi.get(self, "details")
+
+    @details.setter
+    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectOrderDetailArgs']]]]):
+        pulumi.set(self, "details", value)
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "expiration_date")
+
+    @expiration_date.setter
+    def expiration_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expiration_date", value)
+
+    @property
+    @pulumi.getter(name="orderId")
+    def order_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "order_id")
+
+    @order_id.setter
+    def order_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order_id", value)
+
+
+@pulumi.input_type
+class CloudProjectOrderDetailArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 order_detail_id: Optional[pulumi.Input[int]] = None,
+                 quantity: Optional[pulumi.Input[str]] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if order_detail_id is not None:
+            pulumi.set(__self__, "order_detail_id", order_detail_id)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="orderDetailId")
+    def order_detail_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "order_detail_id")
+
+    @order_detail_id.setter
+    def order_detail_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order_detail_id", value)
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "quantity")
+
+    @quantity.setter
+    def quantity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "quantity", value)
+
+
+@pulumi.input_type
+class CloudProjectPlanArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[str],
+                 plan_code: pulumi.Input[str],
+                 pricing_mode: pulumi.Input[str],
+                 catalog_name: Optional[pulumi.Input[str]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanConfigurationArgs']]]] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[str]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "plan_code")
+
+    @plan_code.setter
+    def plan_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "plan_code", value)
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pricing_mode")
+
+    @pricing_mode.setter
+    def pricing_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pricing_mode", value)
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "catalog_name")
+
+    @catalog_name.setter
+    def catalog_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "catalog_name", value)
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanConfigurationArgs']]]]:
+        return pulumi.get(self, "configurations")
+
+    @configurations.setter
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanConfigurationArgs']]]]):
+        pulumi.set(self, "configurations", value)
+
+
+@pulumi.input_type
+class CloudProjectPlanConfigurationArgs:
+    def __init__(__self__, *,
+                 label: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class CloudProjectPlanOptionArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[str],
+                 plan_code: pulumi.Input[str],
+                 pricing_mode: pulumi.Input[str],
+                 catalog_name: Optional[pulumi.Input[str]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanOptionConfigurationArgs']]]] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[str]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "plan_code")
+
+    @plan_code.setter
+    def plan_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "plan_code", value)
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pricing_mode")
+
+    @pricing_mode.setter
+    def pricing_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pricing_mode", value)
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "catalog_name")
+
+    @catalog_name.setter
+    def catalog_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "catalog_name", value)
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanOptionConfigurationArgs']]]]:
+        return pulumi.get(self, "configurations")
+
+    @configurations.setter
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudProjectPlanOptionConfigurationArgs']]]]):
+        pulumi.set(self, "configurations", value)
+
+
+@pulumi.input_type
+class CloudProjectPlanOptionConfigurationArgs:
+    def __init__(__self__, *,
+                 label: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class CloudProjectUserRoleArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
@@ -667,10 +667,10 @@ class Ovh_cloud_project_userRoleArgs:
 
 
 @pulumi.input_type
-class Ovh_dbaas_logs_inputConfigurationArgs:
+class DbaasLogsInputConfigurationArgs:
     def __init__(__self__, *,
-                 flowgger: Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationFlowggerArgs']] = None,
-                 logstash: Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationLogstashArgs']] = None):
+                 flowgger: Optional[pulumi.Input['DbaasLogsInputConfigurationFlowggerArgs']] = None,
+                 logstash: Optional[pulumi.Input['DbaasLogsInputConfigurationLogstashArgs']] = None):
         if flowgger is not None:
             pulumi.set(__self__, "flowgger", flowgger)
         if logstash is not None:
@@ -678,25 +678,25 @@ class Ovh_dbaas_logs_inputConfigurationArgs:
 
     @property
     @pulumi.getter
-    def flowgger(self) -> Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationFlowggerArgs']]:
+    def flowgger(self) -> Optional[pulumi.Input['DbaasLogsInputConfigurationFlowggerArgs']]:
         return pulumi.get(self, "flowgger")
 
     @flowgger.setter
-    def flowgger(self, value: Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationFlowggerArgs']]):
+    def flowgger(self, value: Optional[pulumi.Input['DbaasLogsInputConfigurationFlowggerArgs']]):
         pulumi.set(self, "flowgger", value)
 
     @property
     @pulumi.getter
-    def logstash(self) -> Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationLogstashArgs']]:
+    def logstash(self) -> Optional[pulumi.Input['DbaasLogsInputConfigurationLogstashArgs']]:
         return pulumi.get(self, "logstash")
 
     @logstash.setter
-    def logstash(self, value: Optional[pulumi.Input['Ovh_dbaas_logs_inputConfigurationLogstashArgs']]):
+    def logstash(self, value: Optional[pulumi.Input['DbaasLogsInputConfigurationLogstashArgs']]):
         pulumi.set(self, "logstash", value)
 
 
 @pulumi.input_type
-class Ovh_dbaas_logs_inputConfigurationFlowggerArgs:
+class DbaasLogsInputConfigurationFlowggerArgs:
     def __init__(__self__, *,
                  log_format: pulumi.Input[str],
                  log_framing: pulumi.Input[str]):
@@ -723,7 +723,7 @@ class Ovh_dbaas_logs_inputConfigurationFlowggerArgs:
 
 
 @pulumi.input_type
-class Ovh_dbaas_logs_inputConfigurationLogstashArgs:
+class DbaasLogsInputConfigurationLogstashArgs:
     def __init__(__self__, *,
                  input_section: pulumi.Input[str],
                  filter_section: Optional[pulumi.Input[str]] = None,
@@ -763,7 +763,7 @@ class Ovh_dbaas_logs_inputConfigurationLogstashArgs:
 
 
 @pulumi.input_type
-class Ovh_dedicated_server_install_taskDetailsArgs:
+class DedicatedServerInstallTaskDetailsArgs:
     def __init__(__self__, *,
                  change_log: Optional[pulumi.Input[str]] = None,
                  custom_hostname: Optional[pulumi.Input[str]] = None,
@@ -939,10 +939,10 @@ class Ovh_dedicated_server_install_taskDetailsArgs:
 
 
 @pulumi.input_type
-class Ovh_domain_zoneOrderArgs:
+class DomainZoneOrderArgs:
     def __init__(__self__, *,
                  date: Optional[pulumi.Input[str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zoneOrderDetailArgs']]]] = None,
+                 details: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZoneOrderDetailArgs']]]] = None,
                  expiration_date: Optional[pulumi.Input[str]] = None,
                  order_id: Optional[pulumi.Input[int]] = None):
         if date is not None:
@@ -965,11 +965,11 @@ class Ovh_domain_zoneOrderArgs:
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zoneOrderDetailArgs']]]]:
+    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainZoneOrderDetailArgs']]]]:
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zoneOrderDetailArgs']]]]):
+    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZoneOrderDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @property
@@ -992,7 +992,7 @@ class Ovh_domain_zoneOrderArgs:
 
 
 @pulumi.input_type
-class Ovh_domain_zoneOrderDetailArgs:
+class DomainZoneOrderDetailArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1045,13 +1045,13 @@ class Ovh_domain_zoneOrderDetailArgs:
 
 
 @pulumi.input_type
-class Ovh_domain_zonePlanArgs:
+class DomainZonePlanArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -1098,16 +1098,16 @@ class Ovh_domain_zonePlanArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_domain_zonePlanConfigurationArgs:
+class DomainZonePlanConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):
@@ -1134,13 +1134,13 @@ class Ovh_domain_zonePlanConfigurationArgs:
 
 
 @pulumi.input_type
-class Ovh_domain_zonePlanOptionArgs:
+class DomainZonePlanOptionArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanOptionConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanOptionConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -1187,16 +1187,16 @@ class Ovh_domain_zonePlanOptionArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanOptionConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanOptionConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_domain_zonePlanOptionConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainZonePlanOptionConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_domain_zonePlanOptionConfigurationArgs:
+class DomainZonePlanOptionConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):
@@ -1223,10 +1223,10 @@ class Ovh_domain_zonePlanOptionConfigurationArgs:
 
 
 @pulumi.input_type
-class Ovh_ip_serviceOrderArgs:
+class IpServiceOrderArgs:
     def __init__(__self__, *,
                  date: Optional[pulumi.Input[str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_serviceOrderDetailArgs']]]] = None,
+                 details: Optional[pulumi.Input[Sequence[pulumi.Input['IpServiceOrderDetailArgs']]]] = None,
                  expiration_date: Optional[pulumi.Input[str]] = None,
                  order_id: Optional[pulumi.Input[int]] = None):
         if date is not None:
@@ -1249,11 +1249,11 @@ class Ovh_ip_serviceOrderArgs:
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_serviceOrderDetailArgs']]]]:
+    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpServiceOrderDetailArgs']]]]:
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_serviceOrderDetailArgs']]]]):
+    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpServiceOrderDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @property
@@ -1276,7 +1276,7 @@ class Ovh_ip_serviceOrderArgs:
 
 
 @pulumi.input_type
-class Ovh_ip_serviceOrderDetailArgs:
+class IpServiceOrderDetailArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1329,13 +1329,13 @@ class Ovh_ip_serviceOrderDetailArgs:
 
 
 @pulumi.input_type
-class Ovh_ip_servicePlanArgs:
+class IpServicePlanArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -1382,16 +1382,16 @@ class Ovh_ip_servicePlanArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_ip_servicePlanConfigurationArgs:
+class IpServicePlanConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):
@@ -1418,13 +1418,13 @@ class Ovh_ip_servicePlanConfigurationArgs:
 
 
 @pulumi.input_type
-class Ovh_ip_servicePlanOptionArgs:
+class IpServicePlanOptionArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanOptionConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanOptionConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -1471,16 +1471,16 @@ class Ovh_ip_servicePlanOptionArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanOptionConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanOptionConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_ip_servicePlanOptionConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpServicePlanOptionConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_ip_servicePlanOptionConfigurationArgs:
+class IpServicePlanOptionConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):
@@ -1507,7 +1507,7 @@ class Ovh_ip_servicePlanOptionConfigurationArgs:
 
 
 @pulumi.input_type
-class Ovh_ip_serviceRoutedToArgs:
+class IpServiceRoutedToArgs:
     def __init__(__self__, *,
                  service_name: Optional[pulumi.Input[str]] = None):
         if service_name is not None:
@@ -1524,320 +1524,7 @@ class Ovh_ip_serviceRoutedToArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancingOrderArgs:
-    def __init__(__self__, *,
-                 date: Optional[pulumi.Input[str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingOrderDetailArgs']]]] = None,
-                 expiration_date: Optional[pulumi.Input[str]] = None,
-                 order_id: Optional[pulumi.Input[int]] = None):
-        if date is not None:
-            pulumi.set(__self__, "date", date)
-        if details is not None:
-            pulumi.set(__self__, "details", details)
-        if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
-        if order_id is not None:
-            pulumi.set(__self__, "order_id", order_id)
-
-    @property
-    @pulumi.getter
-    def date(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "date")
-
-    @date.setter
-    def date(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "date", value)
-
-    @property
-    @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingOrderDetailArgs']]]]:
-        return pulumi.get(self, "details")
-
-    @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingOrderDetailArgs']]]]):
-        pulumi.set(self, "details", value)
-
-    @property
-    @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "expiration_date")
-
-    @expiration_date.setter
-    def expiration_date(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "expiration_date", value)
-
-    @property
-    @pulumi.getter(name="orderId")
-    def order_id(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "order_id")
-
-    @order_id.setter
-    def order_id(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "order_id", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingOrderDetailArgs:
-    def __init__(__self__, *,
-                 description: Optional[pulumi.Input[str]] = None,
-                 domain: Optional[pulumi.Input[str]] = None,
-                 order_detail_id: Optional[pulumi.Input[int]] = None,
-                 quantity: Optional[pulumi.Input[str]] = None):
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if order_detail_id is not None:
-            pulumi.set(__self__, "order_detail_id", order_detail_id)
-        if quantity is not None:
-            pulumi.set(__self__, "quantity", quantity)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "description")
-
-    @description.setter
-    def description(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "description", value)
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "domain")
-
-    @domain.setter
-    def domain(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "domain", value)
-
-    @property
-    @pulumi.getter(name="orderDetailId")
-    def order_detail_id(self) -> Optional[pulumi.Input[int]]:
-        return pulumi.get(self, "order_detail_id")
-
-    @order_detail_id.setter
-    def order_detail_id(self, value: Optional[pulumi.Input[int]]):
-        pulumi.set(self, "order_detail_id", value)
-
-    @property
-    @pulumi.getter
-    def quantity(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "quantity")
-
-    @quantity.setter
-    def quantity(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "quantity", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingOrderableZoneArgs:
-    def __init__(__self__, *,
-                 name: Optional[pulumi.Input[str]] = None,
-                 plan_code: Optional[pulumi.Input[str]] = None):
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if plan_code is not None:
-            pulumi.set(__self__, "plan_code", plan_code)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "plan_code")
-
-    @plan_code.setter
-    def plan_code(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "plan_code", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingPlanArgs:
-    def __init__(__self__, *,
-                 duration: pulumi.Input[str],
-                 plan_code: pulumi.Input[str],
-                 pricing_mode: pulumi.Input[str],
-                 catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanConfigurationArgs']]]] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "duration")
-
-    @duration.setter
-    def duration(self, value: pulumi.Input[str]):
-        pulumi.set(self, "duration", value)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "plan_code")
-
-    @plan_code.setter
-    def plan_code(self, value: pulumi.Input[str]):
-        pulumi.set(self, "plan_code", value)
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "pricing_mode")
-
-    @pricing_mode.setter
-    def pricing_mode(self, value: pulumi.Input[str]):
-        pulumi.set(self, "pricing_mode", value)
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "catalog_name")
-
-    @catalog_name.setter
-    def catalog_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "catalog_name", value)
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanConfigurationArgs']]]]:
-        return pulumi.get(self, "configurations")
-
-    @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanConfigurationArgs']]]]):
-        pulumi.set(self, "configurations", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingPlanConfigurationArgs:
-    def __init__(__self__, *,
-                 label: pulumi.Input[str],
-                 value: pulumi.Input[str]):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "label")
-
-    @label.setter
-    def label(self, value: pulumi.Input[str]):
-        pulumi.set(self, "label", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[str]):
-        pulumi.set(self, "value", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingPlanOptionArgs:
-    def __init__(__self__, *,
-                 duration: pulumi.Input[str],
-                 plan_code: pulumi.Input[str],
-                 pricing_mode: pulumi.Input[str],
-                 catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanOptionConfigurationArgs']]]] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "duration")
-
-    @duration.setter
-    def duration(self, value: pulumi.Input[str]):
-        pulumi.set(self, "duration", value)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "plan_code")
-
-    @plan_code.setter
-    def plan_code(self, value: pulumi.Input[str]):
-        pulumi.set(self, "plan_code", value)
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "pricing_mode")
-
-    @pricing_mode.setter
-    def pricing_mode(self, value: pulumi.Input[str]):
-        pulumi.set(self, "pricing_mode", value)
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[pulumi.Input[str]]:
-        return pulumi.get(self, "catalog_name")
-
-    @catalog_name.setter
-    def catalog_name(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "catalog_name", value)
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanOptionConfigurationArgs']]]]:
-        return pulumi.get(self, "configurations")
-
-    @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_iploadbalancingPlanOptionConfigurationArgs']]]]):
-        pulumi.set(self, "configurations", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancingPlanOptionConfigurationArgs:
-    def __init__(__self__, *,
-                 label: pulumi.Input[str],
-                 value: pulumi.Input[str]):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "label")
-
-    @label.setter
-    def label(self, value: pulumi.Input[str]):
-        pulumi.set(self, "label", value)
-
-    @property
-    @pulumi.getter
-    def value(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "value")
-
-    @value.setter
-    def value(self, value: pulumi.Input[str]):
-        pulumi.set(self, "value", value)
-
-
-@pulumi.input_type
-class Ovh_iploadbalancing_http_farmProbeArgs:
+class IploadbalancingHttpFarmProbeArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  force_ssl: Optional[pulumi.Input[bool]] = None,
@@ -1949,7 +1636,7 @@ class Ovh_iploadbalancing_http_farmProbeArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancing_http_routeActionArgs:
+class IploadbalancingHttpRouteActionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  status: Optional[pulumi.Input[int]] = None,
@@ -1989,7 +1676,7 @@ class Ovh_iploadbalancing_http_routeActionArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancing_http_routeRuleArgs:
+class IploadbalancingHttpRouteRuleArgs:
     def __init__(__self__, *,
                  field: Optional[pulumi.Input[str]] = None,
                  match: Optional[pulumi.Input[str]] = None,
@@ -2066,7 +1753,320 @@ class Ovh_iploadbalancing_http_routeRuleArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancing_tcp_farmProbeArgs:
+class IploadbalancingOrderArgs:
+    def __init__(__self__, *,
+                 date: Optional[pulumi.Input[str]] = None,
+                 details: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingOrderDetailArgs']]]] = None,
+                 expiration_date: Optional[pulumi.Input[str]] = None,
+                 order_id: Optional[pulumi.Input[int]] = None):
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if order_id is not None:
+            pulumi.set(__self__, "order_id", order_id)
+
+    @property
+    @pulumi.getter
+    def date(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "date")
+
+    @date.setter
+    def date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "date", value)
+
+    @property
+    @pulumi.getter
+    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingOrderDetailArgs']]]]:
+        return pulumi.get(self, "details")
+
+    @details.setter
+    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingOrderDetailArgs']]]]):
+        pulumi.set(self, "details", value)
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "expiration_date")
+
+    @expiration_date.setter
+    def expiration_date(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expiration_date", value)
+
+    @property
+    @pulumi.getter(name="orderId")
+    def order_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "order_id")
+
+    @order_id.setter
+    def order_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order_id", value)
+
+
+@pulumi.input_type
+class IploadbalancingOrderDetailArgs:
+    def __init__(__self__, *,
+                 description: Optional[pulumi.Input[str]] = None,
+                 domain: Optional[pulumi.Input[str]] = None,
+                 order_detail_id: Optional[pulumi.Input[int]] = None,
+                 quantity: Optional[pulumi.Input[str]] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if order_detail_id is not None:
+            pulumi.set(__self__, "order_detail_id", order_detail_id)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain", value)
+
+    @property
+    @pulumi.getter(name="orderDetailId")
+    def order_detail_id(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "order_detail_id")
+
+    @order_detail_id.setter
+    def order_detail_id(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "order_detail_id", value)
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "quantity")
+
+    @quantity.setter
+    def quantity(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "quantity", value)
+
+
+@pulumi.input_type
+class IploadbalancingOrderableZoneArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 plan_code: Optional[pulumi.Input[str]] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if plan_code is not None:
+            pulumi.set(__self__, "plan_code", plan_code)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "plan_code")
+
+    @plan_code.setter
+    def plan_code(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "plan_code", value)
+
+
+@pulumi.input_type
+class IploadbalancingPlanArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[str],
+                 plan_code: pulumi.Input[str],
+                 pricing_mode: pulumi.Input[str],
+                 catalog_name: Optional[pulumi.Input[str]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanConfigurationArgs']]]] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[str]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "plan_code")
+
+    @plan_code.setter
+    def plan_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "plan_code", value)
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pricing_mode")
+
+    @pricing_mode.setter
+    def pricing_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pricing_mode", value)
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "catalog_name")
+
+    @catalog_name.setter
+    def catalog_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "catalog_name", value)
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanConfigurationArgs']]]]:
+        return pulumi.get(self, "configurations")
+
+    @configurations.setter
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanConfigurationArgs']]]]):
+        pulumi.set(self, "configurations", value)
+
+
+@pulumi.input_type
+class IploadbalancingPlanConfigurationArgs:
+    def __init__(__self__, *,
+                 label: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class IploadbalancingPlanOptionArgs:
+    def __init__(__self__, *,
+                 duration: pulumi.Input[str],
+                 plan_code: pulumi.Input[str],
+                 pricing_mode: pulumi.Input[str],
+                 catalog_name: Optional[pulumi.Input[str]] = None,
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanOptionConfigurationArgs']]]] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "duration")
+
+    @duration.setter
+    def duration(self, value: pulumi.Input[str]):
+        pulumi.set(self, "duration", value)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "plan_code")
+
+    @plan_code.setter
+    def plan_code(self, value: pulumi.Input[str]):
+        pulumi.set(self, "plan_code", value)
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "pricing_mode")
+
+    @pricing_mode.setter
+    def pricing_mode(self, value: pulumi.Input[str]):
+        pulumi.set(self, "pricing_mode", value)
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "catalog_name")
+
+    @catalog_name.setter
+    def catalog_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "catalog_name", value)
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanOptionConfigurationArgs']]]]:
+        return pulumi.get(self, "configurations")
+
+    @configurations.setter
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IploadbalancingPlanOptionConfigurationArgs']]]]):
+        pulumi.set(self, "configurations", value)
+
+
+@pulumi.input_type
+class IploadbalancingPlanOptionConfigurationArgs:
+    def __init__(__self__, *,
+                 label: pulumi.Input[str],
+                 value: pulumi.Input[str]):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[str]):
+        pulumi.set(self, "label", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class IploadbalancingTcpFarmProbeArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  force_ssl: Optional[pulumi.Input[bool]] = None,
@@ -2178,7 +2178,7 @@ class Ovh_iploadbalancing_tcp_farmProbeArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancing_tcp_routeActionArgs:
+class IploadbalancingTcpRouteActionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  target: Optional[pulumi.Input[str]] = None):
@@ -2206,7 +2206,7 @@ class Ovh_iploadbalancing_tcp_routeActionArgs:
 
 
 @pulumi.input_type
-class Ovh_iploadbalancing_tcp_routeRuleArgs:
+class IploadbalancingTcpRouteRuleArgs:
     def __init__(__self__, *,
                  field: Optional[pulumi.Input[str]] = None,
                  match: Optional[pulumi.Input[str]] = None,
@@ -2283,7 +2283,7 @@ class Ovh_iploadbalancing_tcp_routeRuleArgs:
 
 
 @pulumi.input_type
-class Ovh_me_installation_templateCustomizationArgs:
+class MeInstallationTemplateCustomizationArgs:
     def __init__(__self__, *,
                  change_log: Optional[pulumi.Input[str]] = None,
                  custom_hostname: Optional[pulumi.Input[str]] = None,
@@ -2378,10 +2378,10 @@ class Ovh_me_installation_templateCustomizationArgs:
 
 
 @pulumi.input_type
-class Ovh_vrackOrderArgs:
+class VrackOrderArgs:
     def __init__(__self__, *,
                  date: Optional[pulumi.Input[str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackOrderDetailArgs']]]] = None,
+                 details: Optional[pulumi.Input[Sequence[pulumi.Input['VrackOrderDetailArgs']]]] = None,
                  expiration_date: Optional[pulumi.Input[str]] = None,
                  order_id: Optional[pulumi.Input[int]] = None):
         if date is not None:
@@ -2404,11 +2404,11 @@ class Ovh_vrackOrderArgs:
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackOrderDetailArgs']]]]:
+    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VrackOrderDetailArgs']]]]:
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackOrderDetailArgs']]]]):
+    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VrackOrderDetailArgs']]]]):
         pulumi.set(self, "details", value)
 
     @property
@@ -2431,7 +2431,7 @@ class Ovh_vrackOrderArgs:
 
 
 @pulumi.input_type
-class Ovh_vrackOrderDetailArgs:
+class VrackOrderDetailArgs:
     def __init__(__self__, *,
                  description: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -2484,13 +2484,13 @@ class Ovh_vrackOrderDetailArgs:
 
 
 @pulumi.input_type
-class Ovh_vrackPlanArgs:
+class VrackPlanArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2537,16 +2537,16 @@ class Ovh_vrackPlanArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_vrackPlanConfigurationArgs:
+class VrackPlanConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):
@@ -2573,13 +2573,13 @@ class Ovh_vrackPlanConfigurationArgs:
 
 
 @pulumi.input_type
-class Ovh_vrackPlanOptionArgs:
+class VrackPlanOptionArgs:
     def __init__(__self__, *,
                  duration: pulumi.Input[str],
                  plan_code: pulumi.Input[str],
                  pricing_mode: pulumi.Input[str],
                  catalog_name: Optional[pulumi.Input[str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanOptionConfigurationArgs']]]] = None):
+                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanOptionConfigurationArgs']]]] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2626,16 +2626,16 @@ class Ovh_vrackPlanOptionArgs:
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanOptionConfigurationArgs']]]]:
+    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanOptionConfigurationArgs']]]]:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['Ovh_vrackPlanOptionConfigurationArgs']]]]):
+    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VrackPlanOptionConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
 
 @pulumi.input_type
-class Ovh_vrackPlanOptionConfigurationArgs:
+class VrackPlanOptionConfigurationArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  value: pulumi.Input[str]):

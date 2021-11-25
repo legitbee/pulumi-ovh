@@ -4,77 +4,37 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
-export interface Ovh_cloud_projectOrder {
-    date?: pulumi.Input<string>;
-    details?: pulumi.Input<pulumi.Input<inputs.Ovh_cloud_projectOrderDetail>[]>;
-    expirationDate?: pulumi.Input<string>;
-    orderId?: pulumi.Input<number>;
-}
-
-export interface Ovh_cloud_projectOrderDetail {
-    description?: pulumi.Input<string>;
-    domain?: pulumi.Input<string>;
-    orderDetailId?: pulumi.Input<number>;
-    quantity?: pulumi.Input<string>;
-}
-
-export interface Ovh_cloud_projectPlan {
-    catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_cloud_projectPlanConfiguration>[]>;
-    duration: pulumi.Input<string>;
-    planCode: pulumi.Input<string>;
-    pricingMode: pulumi.Input<string>;
-}
-
-export interface Ovh_cloud_projectPlanConfiguration {
-    label: pulumi.Input<string>;
-    value: pulumi.Input<string>;
-}
-
-export interface Ovh_cloud_projectPlanOption {
-    catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_cloud_projectPlanOptionConfiguration>[]>;
-    duration: pulumi.Input<string>;
-    planCode: pulumi.Input<string>;
-    pricingMode: pulumi.Input<string>;
-}
-
-export interface Ovh_cloud_projectPlanOptionConfiguration {
-    label: pulumi.Input<string>;
-    value: pulumi.Input<string>;
-}
-
-export interface Ovh_cloud_project_containerregistryPlan {
+export interface CloudProjectContainerregistryPlan {
     code?: pulumi.Input<string>;
     createdAt?: pulumi.Input<string>;
-    features?: pulumi.Input<pulumi.Input<inputs.Ovh_cloud_project_containerregistryPlanFeature>[]>;
+    features?: pulumi.Input<pulumi.Input<inputs.CloudProjectContainerregistryPlanFeature>[]>;
     id?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
-    registryLimits?: pulumi.Input<pulumi.Input<inputs.Ovh_cloud_project_containerregistryPlanRegistryLimit>[]>;
+    registryLimits?: pulumi.Input<pulumi.Input<inputs.CloudProjectContainerregistryPlanRegistryLimit>[]>;
     updatedAt?: pulumi.Input<string>;
 }
 
-export interface Ovh_cloud_project_containerregistryPlanFeature {
+export interface CloudProjectContainerregistryPlanFeature {
     vulnerability?: pulumi.Input<boolean>;
 }
 
-export interface Ovh_cloud_project_containerregistryPlanRegistryLimit {
+export interface CloudProjectContainerregistryPlanRegistryLimit {
     imageStorage?: pulumi.Input<number>;
     parallelRequest?: pulumi.Input<number>;
 }
 
-export interface Ovh_cloud_project_network_privateRegionsAttribute {
+export interface CloudProjectNetworkPrivateRegionsAttribute {
     openstackid?: pulumi.Input<string>;
     region?: pulumi.Input<string>;
     status: pulumi.Input<string>;
 }
 
-export interface Ovh_cloud_project_network_privateRegionsStatus {
+export interface CloudProjectNetworkPrivateRegionsStatus {
     region?: pulumi.Input<string>;
     status: pulumi.Input<string>;
 }
 
-export interface Ovh_cloud_project_network_private_subnetIpPool {
+export interface CloudProjectNetworkPrivateSubnetIpPool {
     dhcp?: pulumi.Input<boolean>;
     end?: pulumi.Input<string>;
     network?: pulumi.Input<string>;
@@ -82,30 +42,70 @@ export interface Ovh_cloud_project_network_private_subnetIpPool {
     start?: pulumi.Input<string>;
 }
 
-export interface Ovh_cloud_project_userRole {
+export interface CloudProjectOrder {
+    date?: pulumi.Input<string>;
+    details?: pulumi.Input<pulumi.Input<inputs.CloudProjectOrderDetail>[]>;
+    expirationDate?: pulumi.Input<string>;
+    orderId?: pulumi.Input<number>;
+}
+
+export interface CloudProjectOrderDetail {
+    description?: pulumi.Input<string>;
+    domain?: pulumi.Input<string>;
+    orderDetailId?: pulumi.Input<number>;
+    quantity?: pulumi.Input<string>;
+}
+
+export interface CloudProjectPlan {
+    catalogName?: pulumi.Input<string>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.CloudProjectPlanConfiguration>[]>;
+    duration: pulumi.Input<string>;
+    planCode: pulumi.Input<string>;
+    pricingMode: pulumi.Input<string>;
+}
+
+export interface CloudProjectPlanConfiguration {
+    label: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface CloudProjectPlanOption {
+    catalogName?: pulumi.Input<string>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.CloudProjectPlanOptionConfiguration>[]>;
+    duration: pulumi.Input<string>;
+    planCode: pulumi.Input<string>;
+    pricingMode: pulumi.Input<string>;
+}
+
+export interface CloudProjectPlanOptionConfiguration {
+    label: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface CloudProjectUserRole {
     description?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
     name?: pulumi.Input<string>;
     permissions?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
-export interface Ovh_dbaas_logs_inputConfiguration {
-    flowgger?: pulumi.Input<inputs.Ovh_dbaas_logs_inputConfigurationFlowgger>;
-    logstash?: pulumi.Input<inputs.Ovh_dbaas_logs_inputConfigurationLogstash>;
+export interface DbaasLogsInputConfiguration {
+    flowgger?: pulumi.Input<inputs.DbaasLogsInputConfigurationFlowgger>;
+    logstash?: pulumi.Input<inputs.DbaasLogsInputConfigurationLogstash>;
 }
 
-export interface Ovh_dbaas_logs_inputConfigurationFlowgger {
+export interface DbaasLogsInputConfigurationFlowgger {
     logFormat: pulumi.Input<string>;
     logFraming: pulumi.Input<string>;
 }
 
-export interface Ovh_dbaas_logs_inputConfigurationLogstash {
+export interface DbaasLogsInputConfigurationLogstash {
     filterSection?: pulumi.Input<string>;
     inputSection: pulumi.Input<string>;
     patternSection?: pulumi.Input<string>;
 }
 
-export interface Ovh_dedicated_server_install_taskDetails {
+export interface DedicatedServerInstallTaskDetails {
     /**
      * @deprecated field is not used anymore
      */
@@ -125,136 +125,91 @@ export interface Ovh_dedicated_server_install_taskDetails {
     useSpla?: pulumi.Input<boolean>;
 }
 
-export interface Ovh_domain_zoneOrder {
+export interface DomainZoneOrder {
     date?: pulumi.Input<string>;
-    details?: pulumi.Input<pulumi.Input<inputs.Ovh_domain_zoneOrderDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.DomainZoneOrderDetail>[]>;
     expirationDate?: pulumi.Input<string>;
     orderId?: pulumi.Input<number>;
 }
 
-export interface Ovh_domain_zoneOrderDetail {
+export interface DomainZoneOrderDetail {
     description?: pulumi.Input<string>;
     domain?: pulumi.Input<string>;
     orderDetailId?: pulumi.Input<number>;
     quantity?: pulumi.Input<string>;
 }
 
-export interface Ovh_domain_zonePlan {
+export interface DomainZonePlan {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_domain_zonePlanConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.DomainZonePlanConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_domain_zonePlanConfiguration {
+export interface DomainZonePlanConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
-export interface Ovh_domain_zonePlanOption {
+export interface DomainZonePlanOption {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_domain_zonePlanOptionConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.DomainZonePlanOptionConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_domain_zonePlanOptionConfiguration {
+export interface DomainZonePlanOptionConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_serviceOrder {
+export interface IpServiceOrder {
     date?: pulumi.Input<string>;
-    details?: pulumi.Input<pulumi.Input<inputs.Ovh_ip_serviceOrderDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.IpServiceOrderDetail>[]>;
     expirationDate?: pulumi.Input<string>;
     orderId?: pulumi.Input<number>;
 }
 
-export interface Ovh_ip_serviceOrderDetail {
+export interface IpServiceOrderDetail {
     description?: pulumi.Input<string>;
     domain?: pulumi.Input<string>;
     orderDetailId?: pulumi.Input<number>;
     quantity?: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_servicePlan {
+export interface IpServicePlan {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_ip_servicePlanConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.IpServicePlanConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_servicePlanConfiguration {
+export interface IpServicePlanConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_servicePlanOption {
+export interface IpServicePlanOption {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_ip_servicePlanOptionConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.IpServicePlanOptionConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_servicePlanOptionConfiguration {
+export interface IpServicePlanOptionConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
-export interface Ovh_ip_serviceRoutedTo {
+export interface IpServiceRoutedTo {
     serviceName?: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancingOrder {
-    date?: pulumi.Input<string>;
-    details?: pulumi.Input<pulumi.Input<inputs.Ovh_iploadbalancingOrderDetail>[]>;
-    expirationDate?: pulumi.Input<string>;
-    orderId?: pulumi.Input<number>;
-}
-
-export interface Ovh_iploadbalancingOrderDetail {
-    description?: pulumi.Input<string>;
-    domain?: pulumi.Input<string>;
-    orderDetailId?: pulumi.Input<number>;
-    quantity?: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancingOrderableZone {
-    name?: pulumi.Input<string>;
-    planCode?: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancingPlan {
-    catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_iploadbalancingPlanConfiguration>[]>;
-    duration: pulumi.Input<string>;
-    planCode: pulumi.Input<string>;
-    pricingMode: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancingPlanConfiguration {
-    label: pulumi.Input<string>;
-    value: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancingPlanOption {
-    catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_iploadbalancingPlanOptionConfiguration>[]>;
-    duration: pulumi.Input<string>;
-    planCode: pulumi.Input<string>;
-    pricingMode: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancingPlanOptionConfiguration {
-    label: pulumi.Input<string>;
-    value: pulumi.Input<string>;
-}
-
-export interface Ovh_iploadbalancing_http_farmProbe {
+export interface IploadbalancingHttpFarmProbe {
     forceSsl?: pulumi.Input<boolean>;
     interval?: pulumi.Input<number>;
     match?: pulumi.Input<string>;
@@ -266,13 +221,13 @@ export interface Ovh_iploadbalancing_http_farmProbe {
     url?: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancing_http_routeAction {
+export interface IploadbalancingHttpRouteAction {
     status?: pulumi.Input<number>;
     target?: pulumi.Input<string>;
     type: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancing_http_routeRule {
+export interface IploadbalancingHttpRouteRule {
     field?: pulumi.Input<string>;
     match?: pulumi.Input<string>;
     negate?: pulumi.Input<boolean>;
@@ -281,7 +236,52 @@ export interface Ovh_iploadbalancing_http_routeRule {
     subField?: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancing_tcp_farmProbe {
+export interface IploadbalancingOrder {
+    date?: pulumi.Input<string>;
+    details?: pulumi.Input<pulumi.Input<inputs.IploadbalancingOrderDetail>[]>;
+    expirationDate?: pulumi.Input<string>;
+    orderId?: pulumi.Input<number>;
+}
+
+export interface IploadbalancingOrderDetail {
+    description?: pulumi.Input<string>;
+    domain?: pulumi.Input<string>;
+    orderDetailId?: pulumi.Input<number>;
+    quantity?: pulumi.Input<string>;
+}
+
+export interface IploadbalancingOrderableZone {
+    name?: pulumi.Input<string>;
+    planCode?: pulumi.Input<string>;
+}
+
+export interface IploadbalancingPlan {
+    catalogName?: pulumi.Input<string>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.IploadbalancingPlanConfiguration>[]>;
+    duration: pulumi.Input<string>;
+    planCode: pulumi.Input<string>;
+    pricingMode: pulumi.Input<string>;
+}
+
+export interface IploadbalancingPlanConfiguration {
+    label: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface IploadbalancingPlanOption {
+    catalogName?: pulumi.Input<string>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.IploadbalancingPlanOptionConfiguration>[]>;
+    duration: pulumi.Input<string>;
+    planCode: pulumi.Input<string>;
+    pricingMode: pulumi.Input<string>;
+}
+
+export interface IploadbalancingPlanOptionConfiguration {
+    label: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface IploadbalancingTcpFarmProbe {
     forceSsl?: pulumi.Input<boolean>;
     interval?: pulumi.Input<number>;
     match?: pulumi.Input<string>;
@@ -293,12 +293,12 @@ export interface Ovh_iploadbalancing_tcp_farmProbe {
     url?: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancing_tcp_routeAction {
+export interface IploadbalancingTcpRouteAction {
     target?: pulumi.Input<string>;
     type: pulumi.Input<string>;
 }
 
-export interface Ovh_iploadbalancing_tcp_routeRule {
+export interface IploadbalancingTcpRouteRule {
     field?: pulumi.Input<string>;
     match?: pulumi.Input<string>;
     negate?: pulumi.Input<boolean>;
@@ -307,7 +307,7 @@ export interface Ovh_iploadbalancing_tcp_routeRule {
     subField?: pulumi.Input<string>;
 }
 
-export interface Ovh_me_installation_templateCustomization {
+export interface MeInstallationTemplateCustomization {
     /**
      * @deprecated field is not used anymore
      */
@@ -323,43 +323,42 @@ export interface Ovh_me_installation_templateCustomization {
     useDistributionKernel?: pulumi.Input<boolean>;
 }
 
-export interface Ovh_vrackOrder {
+export interface VrackOrder {
     date?: pulumi.Input<string>;
-    details?: pulumi.Input<pulumi.Input<inputs.Ovh_vrackOrderDetail>[]>;
+    details?: pulumi.Input<pulumi.Input<inputs.VrackOrderDetail>[]>;
     expirationDate?: pulumi.Input<string>;
     orderId?: pulumi.Input<number>;
 }
 
-export interface Ovh_vrackOrderDetail {
+export interface VrackOrderDetail {
     description?: pulumi.Input<string>;
     domain?: pulumi.Input<string>;
     orderDetailId?: pulumi.Input<number>;
     quantity?: pulumi.Input<string>;
 }
 
-export interface Ovh_vrackPlan {
+export interface VrackPlan {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_vrackPlanConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.VrackPlanConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_vrackPlanConfiguration {
+export interface VrackPlanConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
 
-export interface Ovh_vrackPlanOption {
+export interface VrackPlanOption {
     catalogName?: pulumi.Input<string>;
-    configurations?: pulumi.Input<pulumi.Input<inputs.Ovh_vrackPlanOptionConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.VrackPlanOptionConfiguration>[]>;
     duration: pulumi.Input<string>;
     planCode: pulumi.Input<string>;
     pricingMode: pulumi.Input<string>;
 }
 
-export interface Ovh_vrackPlanOptionConfiguration {
+export interface VrackPlanOptionConfiguration {
     label: pulumi.Input<string>;
     value: pulumi.Input<string>;
 }
-

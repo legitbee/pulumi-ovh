@@ -20,96 +20,96 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
-	case "ovh:index/ovh_cloud_project:ovh_cloud_project":
-		r = &Ovh_cloud_project{}
-	case "ovh:index/ovh_cloud_project_containerregistry:ovh_cloud_project_containerregistry":
-		r = &Ovh_cloud_project_containerregistry{}
-	case "ovh:index/ovh_cloud_project_containerregistry_user:ovh_cloud_project_containerregistry_user":
-		r = &Ovh_cloud_project_containerregistry_user{}
-	case "ovh:index/ovh_cloud_project_kube:ovh_cloud_project_kube":
-		r = &Ovh_cloud_project_kube{}
-	case "ovh:index/ovh_cloud_project_kube_nodepool:ovh_cloud_project_kube_nodepool":
-		r = &Ovh_cloud_project_kube_nodepool{}
-	case "ovh:index/ovh_cloud_project_network_private:ovh_cloud_project_network_private":
-		r = &Ovh_cloud_project_network_private{}
-	case "ovh:index/ovh_cloud_project_network_private_subnet:ovh_cloud_project_network_private_subnet":
-		r = &Ovh_cloud_project_network_private_subnet{}
-	case "ovh:index/ovh_cloud_project_user:ovh_cloud_project_user":
-		r = &Ovh_cloud_project_user{}
-	case "ovh:index/ovh_dbaas_logs_input:ovh_dbaas_logs_input":
-		r = &Ovh_dbaas_logs_input{}
-	case "ovh:index/ovh_dbaas_logs_output_graylog_stream:ovh_dbaas_logs_output_graylog_stream":
-		r = &Ovh_dbaas_logs_output_graylog_stream{}
-	case "ovh:index/ovh_dedicated_ceph_acl:ovh_dedicated_ceph_acl":
-		r = &Ovh_dedicated_ceph_acl{}
-	case "ovh:index/ovh_dedicated_server_install_task:ovh_dedicated_server_install_task":
-		r = &Ovh_dedicated_server_install_task{}
-	case "ovh:index/ovh_dedicated_server_reboot_task:ovh_dedicated_server_reboot_task":
-		r = &Ovh_dedicated_server_reboot_task{}
-	case "ovh:index/ovh_dedicated_server_update:ovh_dedicated_server_update":
-		r = &Ovh_dedicated_server_update{}
-	case "ovh:index/ovh_domain_zone:ovh_domain_zone":
-		r = &Ovh_domain_zone{}
-	case "ovh:index/ovh_domain_zone_record:ovh_domain_zone_record":
-		r = &Ovh_domain_zone_record{}
-	case "ovh:index/ovh_domain_zone_redirection:ovh_domain_zone_redirection":
-		r = &Ovh_domain_zone_redirection{}
-	case "ovh:index/ovh_ip_reverse:ovh_ip_reverse":
-		r = &Ovh_ip_reverse{}
-	case "ovh:index/ovh_ip_service:ovh_ip_service":
-		r = &Ovh_ip_service{}
-	case "ovh:index/ovh_iploadbalancing:ovh_iploadbalancing":
-		r = &Ovh_iploadbalancing{}
-	case "ovh:index/ovh_iploadbalancing_http_farm:ovh_iploadbalancing_http_farm":
-		r = &Ovh_iploadbalancing_http_farm{}
-	case "ovh:index/ovh_iploadbalancing_http_farm_server:ovh_iploadbalancing_http_farm_server":
-		r = &Ovh_iploadbalancing_http_farm_server{}
-	case "ovh:index/ovh_iploadbalancing_http_frontend:ovh_iploadbalancing_http_frontend":
-		r = &Ovh_iploadbalancing_http_frontend{}
-	case "ovh:index/ovh_iploadbalancing_http_route:ovh_iploadbalancing_http_route":
-		r = &Ovh_iploadbalancing_http_route{}
-	case "ovh:index/ovh_iploadbalancing_http_route_rule:ovh_iploadbalancing_http_route_rule":
-		r = &Ovh_iploadbalancing_http_route_rule{}
-	case "ovh:index/ovh_iploadbalancing_refresh:ovh_iploadbalancing_refresh":
-		r = &Ovh_iploadbalancing_refresh{}
-	case "ovh:index/ovh_iploadbalancing_tcp_farm:ovh_iploadbalancing_tcp_farm":
-		r = &Ovh_iploadbalancing_tcp_farm{}
-	case "ovh:index/ovh_iploadbalancing_tcp_farm_server:ovh_iploadbalancing_tcp_farm_server":
-		r = &Ovh_iploadbalancing_tcp_farm_server{}
-	case "ovh:index/ovh_iploadbalancing_tcp_frontend:ovh_iploadbalancing_tcp_frontend":
-		r = &Ovh_iploadbalancing_tcp_frontend{}
-	case "ovh:index/ovh_iploadbalancing_tcp_route:ovh_iploadbalancing_tcp_route":
-		r = &Ovh_iploadbalancing_tcp_route{}
-	case "ovh:index/ovh_iploadbalancing_tcp_route_rule:ovh_iploadbalancing_tcp_route_rule":
-		r = &Ovh_iploadbalancing_tcp_route_rule{}
-	case "ovh:index/ovh_iploadbalancing_vrack_network:ovh_iploadbalancing_vrack_network":
-		r = &Ovh_iploadbalancing_vrack_network{}
-	case "ovh:index/ovh_me_identity_user:ovh_me_identity_user":
-		r = &Ovh_me_identity_user{}
-	case "ovh:index/ovh_me_installation_template:ovh_me_installation_template":
-		r = &Ovh_me_installation_template{}
-	case "ovh:index/ovh_me_installation_template_partition_scheme:ovh_me_installation_template_partition_scheme":
-		r = &Ovh_me_installation_template_partition_scheme{}
-	case "ovh:index/ovh_me_installation_template_partition_scheme_hardware_raid:ovh_me_installation_template_partition_scheme_hardware_raid":
-		r = &Ovh_me_installation_template_partition_scheme_hardware_raid{}
-	case "ovh:index/ovh_me_installation_template_partition_scheme_partition:ovh_me_installation_template_partition_scheme_partition":
-		r = &Ovh_me_installation_template_partition_scheme_partition{}
-	case "ovh:index/ovh_me_ipxe_script:ovh_me_ipxe_script":
-		r = &Ovh_me_ipxe_script{}
-	case "ovh:index/ovh_me_ssh_key:ovh_me_ssh_key":
-		r = &Ovh_me_ssh_key{}
-	case "ovh:index/ovh_vrack:ovh_vrack":
-		r = &Ovh_vrack{}
-	case "ovh:index/ovh_vrack_cloudproject:ovh_vrack_cloudproject":
-		r = &Ovh_vrack_cloudproject{}
-	case "ovh:index/ovh_vrack_dedicated_server:ovh_vrack_dedicated_server":
-		r = &Ovh_vrack_dedicated_server{}
-	case "ovh:index/ovh_vrack_dedicated_server_interface:ovh_vrack_dedicated_server_interface":
-		r = &Ovh_vrack_dedicated_server_interface{}
-	case "ovh:index/ovh_vrack_ip:ovh_vrack_ip":
-		r = &Ovh_vrack_ip{}
-	case "ovh:index/ovh_vrack_iploadbalancing:ovh_vrack_iploadbalancing":
-		r = &Ovh_vrack_iploadbalancing{}
+	case "ovh:index/cloudProject:CloudProject":
+		r = &CloudProject{}
+	case "ovh:index/cloudProjectContainerregistry:CloudProjectContainerregistry":
+		r = &CloudProjectContainerregistry{}
+	case "ovh:index/cloudProjectContainerregistryUser:CloudProjectContainerregistryUser":
+		r = &CloudProjectContainerregistryUser{}
+	case "ovh:index/cloudProjectKube:CloudProjectKube":
+		r = &CloudProjectKube{}
+	case "ovh:index/cloudProjectKubeNodepool:CloudProjectKubeNodepool":
+		r = &CloudProjectKubeNodepool{}
+	case "ovh:index/cloudProjectNetworkPrivate:CloudProjectNetworkPrivate":
+		r = &CloudProjectNetworkPrivate{}
+	case "ovh:index/cloudProjectNetworkPrivateSubnet:CloudProjectNetworkPrivateSubnet":
+		r = &CloudProjectNetworkPrivateSubnet{}
+	case "ovh:index/cloudProjectUser:CloudProjectUser":
+		r = &CloudProjectUser{}
+	case "ovh:index/dbaasLogsInput:DbaasLogsInput":
+		r = &DbaasLogsInput{}
+	case "ovh:index/dbaasLogsOutputGraylogStream:DbaasLogsOutputGraylogStream":
+		r = &DbaasLogsOutputGraylogStream{}
+	case "ovh:index/dedicatedCephAcl:DedicatedCephAcl":
+		r = &DedicatedCephAcl{}
+	case "ovh:index/dedicatedServerInstallTask:DedicatedServerInstallTask":
+		r = &DedicatedServerInstallTask{}
+	case "ovh:index/dedicatedServerRebootTask:DedicatedServerRebootTask":
+		r = &DedicatedServerRebootTask{}
+	case "ovh:index/dedicatedServerUpdate:DedicatedServerUpdate":
+		r = &DedicatedServerUpdate{}
+	case "ovh:index/domainZone:DomainZone":
+		r = &DomainZone{}
+	case "ovh:index/domainZoneRecord:DomainZoneRecord":
+		r = &DomainZoneRecord{}
+	case "ovh:index/domainZoneRedirection:DomainZoneRedirection":
+		r = &DomainZoneRedirection{}
+	case "ovh:index/ipReverse:IpReverse":
+		r = &IpReverse{}
+	case "ovh:index/ipService:IpService":
+		r = &IpService{}
+	case "ovh:index/iploadbalancing:Iploadbalancing":
+		r = &Iploadbalancing{}
+	case "ovh:index/iploadbalancingHttpFarm:IploadbalancingHttpFarm":
+		r = &IploadbalancingHttpFarm{}
+	case "ovh:index/iploadbalancingHttpFarmServer:IploadbalancingHttpFarmServer":
+		r = &IploadbalancingHttpFarmServer{}
+	case "ovh:index/iploadbalancingHttpFrontend:IploadbalancingHttpFrontend":
+		r = &IploadbalancingHttpFrontend{}
+	case "ovh:index/iploadbalancingHttpRoute:IploadbalancingHttpRoute":
+		r = &IploadbalancingHttpRoute{}
+	case "ovh:index/iploadbalancingHttpRouteRule:IploadbalancingHttpRouteRule":
+		r = &IploadbalancingHttpRouteRule{}
+	case "ovh:index/iploadbalancingRefresh:IploadbalancingRefresh":
+		r = &IploadbalancingRefresh{}
+	case "ovh:index/iploadbalancingTcpFarm:IploadbalancingTcpFarm":
+		r = &IploadbalancingTcpFarm{}
+	case "ovh:index/iploadbalancingTcpFarmServer:IploadbalancingTcpFarmServer":
+		r = &IploadbalancingTcpFarmServer{}
+	case "ovh:index/iploadbalancingTcpFrontend:IploadbalancingTcpFrontend":
+		r = &IploadbalancingTcpFrontend{}
+	case "ovh:index/iploadbalancingTcpRoute:IploadbalancingTcpRoute":
+		r = &IploadbalancingTcpRoute{}
+	case "ovh:index/iploadbalancingTcpRouteRule:IploadbalancingTcpRouteRule":
+		r = &IploadbalancingTcpRouteRule{}
+	case "ovh:index/iploadbalancingVrackNetwork:IploadbalancingVrackNetwork":
+		r = &IploadbalancingVrackNetwork{}
+	case "ovh:index/meIdentityUser:MeIdentityUser":
+		r = &MeIdentityUser{}
+	case "ovh:index/meInstallationTemplate:MeInstallationTemplate":
+		r = &MeInstallationTemplate{}
+	case "ovh:index/meInstallationTemplatePartitionScheme:MeInstallationTemplatePartitionScheme":
+		r = &MeInstallationTemplatePartitionScheme{}
+	case "ovh:index/meInstallationTemplatePartitionSchemeHardwareRaid:MeInstallationTemplatePartitionSchemeHardwareRaid":
+		r = &MeInstallationTemplatePartitionSchemeHardwareRaid{}
+	case "ovh:index/meInstallationTemplatePartitionSchemePartition:MeInstallationTemplatePartitionSchemePartition":
+		r = &MeInstallationTemplatePartitionSchemePartition{}
+	case "ovh:index/meIpxeScript:MeIpxeScript":
+		r = &MeIpxeScript{}
+	case "ovh:index/meSshKey:MeSshKey":
+		r = &MeSshKey{}
+	case "ovh:index/vrack:Vrack":
+		r = &Vrack{}
+	case "ovh:index/vrackCloudproject:VrackCloudproject":
+		r = &VrackCloudproject{}
+	case "ovh:index/vrackDedicatedServer:VrackDedicatedServer":
+		r = &VrackDedicatedServer{}
+	case "ovh:index/vrackDedicatedServerInterface:VrackDedicatedServerInterface":
+		r = &VrackDedicatedServerInterface{}
+	case "ovh:index/vrackIp:VrackIp":
+		r = &VrackIp{}
+	case "ovh:index/vrackIploadbalancing:VrackIploadbalancing":
+		r = &VrackIploadbalancing{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -143,227 +143,227 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project",
+		"index/cloudProject",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_containerregistry",
+		"index/cloudProjectContainerregistry",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_containerregistry_user",
+		"index/cloudProjectContainerregistryUser",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_kube",
+		"index/cloudProjectKube",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_kube_nodepool",
+		"index/cloudProjectKubeNodepool",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_network_private",
+		"index/cloudProjectNetworkPrivate",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_network_private_subnet",
+		"index/cloudProjectNetworkPrivateSubnet",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_cloud_project_user",
+		"index/cloudProjectUser",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dbaas_logs_input",
+		"index/dbaasLogsInput",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dbaas_logs_output_graylog_stream",
+		"index/dbaasLogsOutputGraylogStream",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dedicated_ceph_acl",
+		"index/dedicatedCephAcl",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dedicated_server_install_task",
+		"index/dedicatedServerInstallTask",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dedicated_server_reboot_task",
+		"index/dedicatedServerRebootTask",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_dedicated_server_update",
+		"index/dedicatedServerUpdate",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_domain_zone",
+		"index/domainZone",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_domain_zone_record",
+		"index/domainZoneRecord",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_domain_zone_redirection",
+		"index/domainZoneRedirection",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_ip_reverse",
+		"index/ipReverse",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_ip_service",
+		"index/ipService",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing",
+		"index/iploadbalancing",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_http_farm",
+		"index/iploadbalancingHttpFarm",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_http_farm_server",
+		"index/iploadbalancingHttpFarmServer",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_http_frontend",
+		"index/iploadbalancingHttpFrontend",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_http_route",
+		"index/iploadbalancingHttpRoute",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_http_route_rule",
+		"index/iploadbalancingHttpRouteRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_refresh",
+		"index/iploadbalancingRefresh",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_tcp_farm",
+		"index/iploadbalancingTcpFarm",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_tcp_farm_server",
+		"index/iploadbalancingTcpFarmServer",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_tcp_frontend",
+		"index/iploadbalancingTcpFrontend",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_tcp_route",
+		"index/iploadbalancingTcpRoute",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_tcp_route_rule",
+		"index/iploadbalancingTcpRouteRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_iploadbalancing_vrack_network",
+		"index/iploadbalancingVrackNetwork",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_identity_user",
+		"index/meIdentityUser",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_installation_template",
+		"index/meInstallationTemplate",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_installation_template_partition_scheme",
+		"index/meInstallationTemplatePartitionScheme",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_installation_template_partition_scheme_hardware_raid",
+		"index/meInstallationTemplatePartitionSchemeHardwareRaid",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_installation_template_partition_scheme_partition",
+		"index/meInstallationTemplatePartitionSchemePartition",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_ipxe_script",
+		"index/meIpxeScript",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_me_ssh_key",
+		"index/meSshKey",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack",
+		"index/vrack",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack_cloudproject",
+		"index/vrackCloudproject",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack_dedicated_server",
+		"index/vrackDedicatedServer",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack_dedicated_server_interface",
+		"index/vrackDedicatedServerInterface",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack_ip",
+		"index/vrackIp",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ovh_vrack_iploadbalancing",
+		"index/vrackIploadbalancing",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

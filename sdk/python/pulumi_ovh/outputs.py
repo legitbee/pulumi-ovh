@@ -10,1655 +10,90 @@ from . import _utilities
 from . import outputs
 
 __all__ = [
-    'GetOvhCloud_Project_Capabilities_ContainerregistryResultResult',
-    'GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanResult',
-    'GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeatureResult',
-    'GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimitResult',
-    'GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterFeatureResult',
-    'GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterRegistryLimitResult',
-    'GetOvh_Cloud_Project_ContainerregistriesResultResult',
-    'GetOvh_Cloud_Project_Containerregistry_UsersResultResult',
-    'GetOvh_Cloud_Project_RegionServiceResult',
-    'GetOvh_Dedicated_ServerVniResult',
-    'GetOvh_Ip_ServiceRoutedToResult',
-    'GetOvh_IploadbalancingOrderableZoneResult',
-    'GetOvh_Me_Installation_TemplateCustomizationResult',
-    'GetOvh_Me_Installation_TemplatePartitionSchemeResult',
-    'GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaidResult',
-    'GetOvh_Me_Installation_TemplatePartitionSchemePartitionResult',
-    'GetOvh_Order_Cart_ProductResultResult',
-    'GetOvh_Order_Cart_ProductResultPriceResult',
-    'GetOvh_Order_Cart_ProductResultPricePriceResult',
-    'GetOvh_Order_Cart_Product_OptionsResultResult',
-    'GetOvh_Order_Cart_Product_OptionsResultPriceResult',
-    'GetOvh_Order_Cart_Product_OptionsResultPricePriceResult',
-    'GetOvh_Order_Cart_Product_Options_PlanPriceResult',
-    'GetOvh_Order_Cart_Product_Options_PlanPricePriceResult',
-    'GetOvh_Order_Cart_Product_Options_PlanSelectedPriceResult',
-    'GetOvh_Order_Cart_Product_Options_PlanSelectedPricePriceResult',
-    'GetOvh_Order_Cart_Product_PlanPriceResult',
-    'GetOvh_Order_Cart_Product_PlanPricePriceResult',
-    'GetOvh_Order_Cart_Product_PlanSelectedPriceResult',
-    'GetOvh_Order_Cart_Product_PlanSelectedPricePriceResult',
-    'Ovh_cloud_projectOrder',
-    'Ovh_cloud_projectOrderDetail',
-    'Ovh_cloud_projectPlan',
-    'Ovh_cloud_projectPlanConfiguration',
-    'Ovh_cloud_projectPlanOption',
-    'Ovh_cloud_projectPlanOptionConfiguration',
-    'Ovh_cloud_project_containerregistryPlan',
-    'Ovh_cloud_project_containerregistryPlanFeature',
-    'Ovh_cloud_project_containerregistryPlanRegistryLimit',
-    'Ovh_cloud_project_network_privateRegionsAttribute',
-    'Ovh_cloud_project_network_privateRegionsStatus',
-    'Ovh_cloud_project_network_private_subnetIpPool',
-    'Ovh_cloud_project_userRole',
-    'Ovh_dbaas_logs_inputConfiguration',
-    'Ovh_dbaas_logs_inputConfigurationFlowgger',
-    'Ovh_dbaas_logs_inputConfigurationLogstash',
-    'Ovh_dedicated_server_install_taskDetails',
-    'Ovh_domain_zoneOrder',
-    'Ovh_domain_zoneOrderDetail',
-    'Ovh_domain_zonePlan',
-    'Ovh_domain_zonePlanConfiguration',
-    'Ovh_domain_zonePlanOption',
-    'Ovh_domain_zonePlanOptionConfiguration',
-    'Ovh_ip_serviceOrder',
-    'Ovh_ip_serviceOrderDetail',
-    'Ovh_ip_servicePlan',
-    'Ovh_ip_servicePlanConfiguration',
-    'Ovh_ip_servicePlanOption',
-    'Ovh_ip_servicePlanOptionConfiguration',
-    'Ovh_ip_serviceRoutedTo',
-    'Ovh_iploadbalancingOrder',
-    'Ovh_iploadbalancingOrderDetail',
-    'Ovh_iploadbalancingOrderableZone',
-    'Ovh_iploadbalancingPlan',
-    'Ovh_iploadbalancingPlanConfiguration',
-    'Ovh_iploadbalancingPlanOption',
-    'Ovh_iploadbalancingPlanOptionConfiguration',
-    'Ovh_iploadbalancing_http_farmProbe',
-    'Ovh_iploadbalancing_http_routeAction',
-    'Ovh_iploadbalancing_http_routeRule',
-    'Ovh_iploadbalancing_tcp_farmProbe',
-    'Ovh_iploadbalancing_tcp_routeAction',
-    'Ovh_iploadbalancing_tcp_routeRule',
-    'Ovh_me_installation_templateCustomization',
-    'Ovh_vrackOrder',
-    'Ovh_vrackOrderDetail',
-    'Ovh_vrackPlan',
-    'Ovh_vrackPlanConfiguration',
-    'Ovh_vrackPlanOption',
-    'Ovh_vrackPlanOptionConfiguration',
+    'CloudProjectContainerregistryPlan',
+    'CloudProjectContainerregistryPlanFeature',
+    'CloudProjectContainerregistryPlanRegistryLimit',
+    'CloudProjectNetworkPrivateRegionsAttribute',
+    'CloudProjectNetworkPrivateRegionsStatus',
+    'CloudProjectNetworkPrivateSubnetIpPool',
+    'CloudProjectOrder',
+    'CloudProjectOrderDetail',
+    'CloudProjectPlan',
+    'CloudProjectPlanConfiguration',
+    'CloudProjectPlanOption',
+    'CloudProjectPlanOptionConfiguration',
+    'CloudProjectUserRole',
+    'DbaasLogsInputConfiguration',
+    'DbaasLogsInputConfigurationFlowgger',
+    'DbaasLogsInputConfigurationLogstash',
+    'DedicatedServerInstallTaskDetails',
+    'DomainZoneOrder',
+    'DomainZoneOrderDetail',
+    'DomainZonePlan',
+    'DomainZonePlanConfiguration',
+    'DomainZonePlanOption',
+    'DomainZonePlanOptionConfiguration',
+    'IpServiceOrder',
+    'IpServiceOrderDetail',
+    'IpServicePlan',
+    'IpServicePlanConfiguration',
+    'IpServicePlanOption',
+    'IpServicePlanOptionConfiguration',
+    'IpServiceRoutedTo',
+    'IploadbalancingHttpFarmProbe',
+    'IploadbalancingHttpRouteAction',
+    'IploadbalancingHttpRouteRule',
+    'IploadbalancingOrder',
+    'IploadbalancingOrderDetail',
+    'IploadbalancingOrderableZone',
+    'IploadbalancingPlan',
+    'IploadbalancingPlanConfiguration',
+    'IploadbalancingPlanOption',
+    'IploadbalancingPlanOptionConfiguration',
+    'IploadbalancingTcpFarmProbe',
+    'IploadbalancingTcpRouteAction',
+    'IploadbalancingTcpRouteRule',
+    'MeInstallationTemplateCustomization',
+    'VrackOrder',
+    'VrackOrderDetail',
+    'VrackPlan',
+    'VrackPlanConfiguration',
+    'VrackPlanOption',
+    'VrackPlanOptionConfiguration',
+    'GetCloudProjectCapabilitiesContainerregistryFilterFeatureResult',
+    'GetCloudProjectCapabilitiesContainerregistryFilterRegistryLimitResult',
+    'GetCloudProjectCapabilitiesContainerregistryResultResult',
+    'GetCloudProjectCapabilitiesContainerregistryResultPlanResult',
+    'GetCloudProjectCapabilitiesContainerregistryResultPlanFeatureResult',
+    'GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimitResult',
+    'GetCloudProjectContainerregistriesResultResult',
+    'GetCloudProjectContainerregistryUsersResultResult',
+    'GetCloudProjectRegionServiceResult',
+    'GetDedicatedServerVniResult',
+    'GetIpServiceRoutedToResult',
+    'GetIploadbalancingOrderableZoneResult',
+    'GetMeInstallationTemplateCustomizationResult',
+    'GetMeInstallationTemplatePartitionSchemeResult',
+    'GetMeInstallationTemplatePartitionSchemeHardwareRaidResult',
+    'GetMeInstallationTemplatePartitionSchemePartitionResult',
+    'GetOrderCartProductOptionsPlanPriceResult',
+    'GetOrderCartProductOptionsPlanPricePriceResult',
+    'GetOrderCartProductOptionsPlanSelectedPriceResult',
+    'GetOrderCartProductOptionsPlanSelectedPricePriceResult',
+    'GetOrderCartProductOptionsResultResult',
+    'GetOrderCartProductOptionsResultPriceResult',
+    'GetOrderCartProductOptionsResultPricePriceResult',
+    'GetOrderCartProductPlanPriceResult',
+    'GetOrderCartProductPlanPricePriceResult',
+    'GetOrderCartProductPlanSelectedPriceResult',
+    'GetOrderCartProductPlanSelectedPricePriceResult',
+    'GetOrderCartProductResultResult',
+    'GetOrderCartProductResultPriceResult',
+    'GetOrderCartProductResultPricePriceResult',
 ]
 
 @pulumi.output_type
-class GetOvhCloud_Project_Capabilities_ContainerregistryResultResult(dict):
-    def __init__(__self__, *,
-                 plans: Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanResult'],
-                 region_name: str):
-        pulumi.set(__self__, "plans", plans)
-        pulumi.set(__self__, "region_name", region_name)
-
-    @property
-    @pulumi.getter
-    def plans(self) -> Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanResult']:
-        return pulumi.get(self, "plans")
-
-    @property
-    @pulumi.getter(name="regionName")
-    def region_name(self) -> str:
-        return pulumi.get(self, "region_name")
-
-
-@pulumi.output_type
-class GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanResult(dict):
-    def __init__(__self__, *,
-                 code: str,
-                 created_at: str,
-                 features: Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeatureResult'],
-                 id: str,
-                 name: str,
-                 registry_limits: Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimitResult'],
-                 updated_at: str):
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "created_at", created_at)
-        pulumi.set(__self__, "features", features)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "registry_limits", registry_limits)
-        pulumi.set(__self__, "updated_at", updated_at)
-
-    @property
-    @pulumi.getter
-    def code(self) -> str:
-        return pulumi.get(self, "code")
-
-    @property
-    @pulumi.getter(name="createdAt")
-    def created_at(self) -> str:
-        return pulumi.get(self, "created_at")
-
-    @property
-    @pulumi.getter
-    def features(self) -> Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeatureResult']:
-        return pulumi.get(self, "features")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="registryLimits")
-    def registry_limits(self) -> Sequence['outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimitResult']:
-        return pulumi.get(self, "registry_limits")
-
-    @property
-    @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> str:
-        return pulumi.get(self, "updated_at")
-
-
-@pulumi.output_type
-class GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeatureResult(dict):
-    def __init__(__self__, *,
-                 vulnerability: bool):
-        pulumi.set(__self__, "vulnerability", vulnerability)
-
-    @property
-    @pulumi.getter
-    def vulnerability(self) -> bool:
-        return pulumi.get(self, "vulnerability")
-
-
-@pulumi.output_type
-class GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimitResult(dict):
-    def __init__(__self__, *,
-                 image_storage: int,
-                 parallel_request: int):
-        pulumi.set(__self__, "image_storage", image_storage)
-        pulumi.set(__self__, "parallel_request", parallel_request)
-
-    @property
-    @pulumi.getter(name="imageStorage")
-    def image_storage(self) -> int:
-        return pulumi.get(self, "image_storage")
-
-    @property
-    @pulumi.getter(name="parallelRequest")
-    def parallel_request(self) -> int:
-        return pulumi.get(self, "parallel_request")
-
-
-@pulumi.output_type
-class GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterFeatureResult(dict):
-    def __init__(__self__, *,
-                 vulnerability: bool):
-        pulumi.set(__self__, "vulnerability", vulnerability)
-
-    @property
-    @pulumi.getter
-    def vulnerability(self) -> bool:
-        return pulumi.get(self, "vulnerability")
-
-
-@pulumi.output_type
-class GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterRegistryLimitResult(dict):
-    def __init__(__self__, *,
-                 image_storage: int,
-                 parallel_request: int):
-        pulumi.set(__self__, "image_storage", image_storage)
-        pulumi.set(__self__, "parallel_request", parallel_request)
-
-    @property
-    @pulumi.getter(name="imageStorage")
-    def image_storage(self) -> int:
-        return pulumi.get(self, "image_storage")
-
-    @property
-    @pulumi.getter(name="parallelRequest")
-    def parallel_request(self) -> int:
-        return pulumi.get(self, "parallel_request")
-
-
-@pulumi.output_type
-class GetOvh_Cloud_Project_ContainerregistriesResultResult(dict):
-    def __init__(__self__, *,
-                 created_at: str,
-                 id: str,
-                 name: str,
-                 project_id: str,
-                 region: str,
-                 size: int,
-                 status: str,
-                 updated_at: str,
-                 url: str,
-                 version: str):
-        pulumi.set(__self__, "created_at", created_at)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "updated_at", updated_at)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "version", version)
-
-    @property
-    @pulumi.getter(name="createdAt")
-    def created_at(self) -> str:
-        return pulumi.get(self, "created_at")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="projectId")
-    def project_id(self) -> str:
-        return pulumi.get(self, "project_id")
-
-    @property
-    @pulumi.getter
-    def region(self) -> str:
-        return pulumi.get(self, "region")
-
-    @property
-    @pulumi.getter
-    def size(self) -> int:
-        return pulumi.get(self, "size")
-
-    @property
-    @pulumi.getter
-    def status(self) -> str:
-        return pulumi.get(self, "status")
-
-    @property
-    @pulumi.getter(name="updatedAt")
-    def updated_at(self) -> str:
-        return pulumi.get(self, "updated_at")
-
-    @property
-    @pulumi.getter
-    def url(self) -> str:
-        return pulumi.get(self, "url")
-
-    @property
-    @pulumi.getter
-    def version(self) -> str:
-        return pulumi.get(self, "version")
-
-
-@pulumi.output_type
-class GetOvh_Cloud_Project_Containerregistry_UsersResultResult(dict):
-    def __init__(__self__, *,
-                 email: str,
-                 id: str,
-                 user: str):
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "user", user)
-
-    @property
-    @pulumi.getter
-    def email(self) -> str:
-        return pulumi.get(self, "email")
-
-    @property
-    @pulumi.getter
-    def id(self) -> str:
-        return pulumi.get(self, "id")
-
-    @property
-    @pulumi.getter
-    def user(self) -> str:
-        return pulumi.get(self, "user")
-
-
-@pulumi.output_type
-class GetOvh_Cloud_Project_RegionServiceResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 status: str):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "status", status)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def status(self) -> str:
-        return pulumi.get(self, "status")
-
-
-@pulumi.output_type
-class GetOvh_Dedicated_ServerVniResult(dict):
-    def __init__(__self__, *,
-                 enabled: bool,
-                 mode: str,
-                 name: str,
-                 nics: Sequence[str],
-                 server_name: str,
-                 uuid: str,
-                 vrack: str):
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "nics", nics)
-        pulumi.set(__self__, "server_name", server_name)
-        pulumi.set(__self__, "uuid", uuid)
-        pulumi.set(__self__, "vrack", vrack)
-
-    @property
-    @pulumi.getter
-    def enabled(self) -> bool:
-        return pulumi.get(self, "enabled")
-
-    @property
-    @pulumi.getter
-    def mode(self) -> str:
-        return pulumi.get(self, "mode")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def nics(self) -> Sequence[str]:
-        return pulumi.get(self, "nics")
-
-    @property
-    @pulumi.getter(name="serverName")
-    def server_name(self) -> str:
-        return pulumi.get(self, "server_name")
-
-    @property
-    @pulumi.getter
-    def uuid(self) -> str:
-        return pulumi.get(self, "uuid")
-
-    @property
-    @pulumi.getter
-    def vrack(self) -> str:
-        return pulumi.get(self, "vrack")
-
-
-@pulumi.output_type
-class GetOvh_Ip_ServiceRoutedToResult(dict):
-    def __init__(__self__, *,
-                 service_name: str):
-        pulumi.set(__self__, "service_name", service_name)
-
-    @property
-    @pulumi.getter(name="serviceName")
-    def service_name(self) -> str:
-        return pulumi.get(self, "service_name")
-
-
-@pulumi.output_type
-class GetOvh_IploadbalancingOrderableZoneResult(dict):
-    def __init__(__self__, *,
-                 name: str,
-                 plan_code: str):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "plan_code", plan_code)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-
-@pulumi.output_type
-class GetOvh_Me_Installation_TemplateCustomizationResult(dict):
-    def __init__(__self__, *,
-                 change_log: str,
-                 custom_hostname: str,
-                 post_installation_script_link: str,
-                 post_installation_script_return: str,
-                 rating: int,
-                 ssh_key_name: str,
-                 use_distribution_kernel: bool):
-        pulumi.set(__self__, "change_log", change_log)
-        pulumi.set(__self__, "custom_hostname", custom_hostname)
-        pulumi.set(__self__, "post_installation_script_link", post_installation_script_link)
-        pulumi.set(__self__, "post_installation_script_return", post_installation_script_return)
-        pulumi.set(__self__, "rating", rating)
-        pulumi.set(__self__, "ssh_key_name", ssh_key_name)
-        pulumi.set(__self__, "use_distribution_kernel", use_distribution_kernel)
-
-    @property
-    @pulumi.getter(name="changeLog")
-    def change_log(self) -> str:
-        return pulumi.get(self, "change_log")
-
-    @property
-    @pulumi.getter(name="customHostname")
-    def custom_hostname(self) -> str:
-        return pulumi.get(self, "custom_hostname")
-
-    @property
-    @pulumi.getter(name="postInstallationScriptLink")
-    def post_installation_script_link(self) -> str:
-        return pulumi.get(self, "post_installation_script_link")
-
-    @property
-    @pulumi.getter(name="postInstallationScriptReturn")
-    def post_installation_script_return(self) -> str:
-        return pulumi.get(self, "post_installation_script_return")
-
-    @property
-    @pulumi.getter
-    def rating(self) -> int:
-        return pulumi.get(self, "rating")
-
-    @property
-    @pulumi.getter(name="sshKeyName")
-    def ssh_key_name(self) -> str:
-        return pulumi.get(self, "ssh_key_name")
-
-    @property
-    @pulumi.getter(name="useDistributionKernel")
-    def use_distribution_kernel(self) -> bool:
-        return pulumi.get(self, "use_distribution_kernel")
-
-
-@pulumi.output_type
-class GetOvh_Me_Installation_TemplatePartitionSchemeResult(dict):
-    def __init__(__self__, *,
-                 hardware_raids: Sequence['outputs.GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaidResult'],
-                 name: str,
-                 partitions: Sequence['outputs.GetOvh_Me_Installation_TemplatePartitionSchemePartitionResult'],
-                 priority: int):
-        pulumi.set(__self__, "hardware_raids", hardware_raids)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "partitions", partitions)
-        pulumi.set(__self__, "priority", priority)
-
-    @property
-    @pulumi.getter(name="hardwareRaids")
-    def hardware_raids(self) -> Sequence['outputs.GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaidResult']:
-        return pulumi.get(self, "hardware_raids")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def partitions(self) -> Sequence['outputs.GetOvh_Me_Installation_TemplatePartitionSchemePartitionResult']:
-        return pulumi.get(self, "partitions")
-
-    @property
-    @pulumi.getter
-    def priority(self) -> int:
-        return pulumi.get(self, "priority")
-
-
-@pulumi.output_type
-class GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaidResult(dict):
-    def __init__(__self__, *,
-                 disks: Sequence[str],
-                 mode: str,
-                 name: str,
-                 step: int):
-        pulumi.set(__self__, "disks", disks)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "step", step)
-
-    @property
-    @pulumi.getter
-    def disks(self) -> Sequence[str]:
-        return pulumi.get(self, "disks")
-
-    @property
-    @pulumi.getter
-    def mode(self) -> str:
-        return pulumi.get(self, "mode")
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter
-    def step(self) -> int:
-        return pulumi.get(self, "step")
-
-
-@pulumi.output_type
-class GetOvh_Me_Installation_TemplatePartitionSchemePartitionResult(dict):
-    def __init__(__self__, *,
-                 filesystem: str,
-                 mountpoint: str,
-                 order: int,
-                 raid: str,
-                 size: int,
-                 type: str,
-                 volume_name: str):
-        pulumi.set(__self__, "filesystem", filesystem)
-        pulumi.set(__self__, "mountpoint", mountpoint)
-        pulumi.set(__self__, "order", order)
-        pulumi.set(__self__, "raid", raid)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "volume_name", volume_name)
-
-    @property
-    @pulumi.getter
-    def filesystem(self) -> str:
-        return pulumi.get(self, "filesystem")
-
-    @property
-    @pulumi.getter
-    def mountpoint(self) -> str:
-        return pulumi.get(self, "mountpoint")
-
-    @property
-    @pulumi.getter
-    def order(self) -> int:
-        return pulumi.get(self, "order")
-
-    @property
-    @pulumi.getter
-    def raid(self) -> str:
-        return pulumi.get(self, "raid")
-
-    @property
-    @pulumi.getter
-    def size(self) -> int:
-        return pulumi.get(self, "size")
-
-    @property
-    @pulumi.getter
-    def type(self) -> str:
-        return pulumi.get(self, "type")
-
-    @property
-    @pulumi.getter(name="volumeName")
-    def volume_name(self) -> str:
-        return pulumi.get(self, "volume_name")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_ProductResultResult(dict):
-    def __init__(__self__, *,
-                 plan_code: str,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_ProductResultPriceResult'],
-                 product_name: str,
-                 product_type: str):
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_type", product_type)
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_ProductResultPriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        return pulumi.get(self, "product_name")
-
-    @property
-    @pulumi.getter(name="productType")
-    def product_type(self) -> str:
-        return pulumi.get(self, "product_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_ProductResultPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_ProductResultPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_ProductResultPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_ProductResultPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_OptionsResultResult(dict):
-    def __init__(__self__, *,
-                 exclusive: bool,
-                 family: str,
-                 mandatory: bool,
-                 plan_code: str,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_OptionsResultPriceResult'],
-                 product_name: str,
-                 product_type: str):
-        pulumi.set(__self__, "exclusive", exclusive)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "mandatory", mandatory)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_type", product_type)
-
-    @property
-    @pulumi.getter
-    def exclusive(self) -> bool:
-        return pulumi.get(self, "exclusive")
-
-    @property
-    @pulumi.getter
-    def family(self) -> str:
-        return pulumi.get(self, "family")
-
-    @property
-    @pulumi.getter
-    def mandatory(self) -> bool:
-        return pulumi.get(self, "mandatory")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_OptionsResultPriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="productName")
-    def product_name(self) -> str:
-        return pulumi.get(self, "product_name")
-
-    @property
-    @pulumi.getter(name="productType")
-    def product_type(self) -> str:
-        return pulumi.get(self, "product_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_OptionsResultPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_OptionsResultPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_OptionsResultPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_OptionsResultPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_Options_PlanPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_Options_PlanPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_Options_PlanPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_Options_PlanPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_Options_PlanSelectedPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_Options_PlanSelectedPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_Options_PlanSelectedPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_Options_PlanSelectedPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_PlanPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_PlanPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_PlanPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_PlanPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_PlanSelectedPriceResult(dict):
-    def __init__(__self__, *,
-                 capacities: Sequence[Any],
-                 description: str,
-                 duration: str,
-                 interval: int,
-                 maximum_quantity: int,
-                 maximum_repeat: int,
-                 minimum_quantity: int,
-                 minimum_repeat: int,
-                 price_in_ucents: int,
-                 prices: Sequence['outputs.GetOvh_Order_Cart_Product_PlanSelectedPricePriceResult'],
-                 pricing_mode: str,
-                 pricing_type: str):
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "interval", interval)
-        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
-        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
-        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
-        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
-        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
-        pulumi.set(__self__, "prices", prices)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        pulumi.set(__self__, "pricing_type", pricing_type)
-
-    @property
-    @pulumi.getter
-    def capacities(self) -> Sequence[Any]:
-        return pulumi.get(self, "capacities")
-
-    @property
-    @pulumi.getter
-    def description(self) -> str:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter
-    def interval(self) -> int:
-        return pulumi.get(self, "interval")
-
-    @property
-    @pulumi.getter(name="maximumQuantity")
-    def maximum_quantity(self) -> int:
-        return pulumi.get(self, "maximum_quantity")
-
-    @property
-    @pulumi.getter(name="maximumRepeat")
-    def maximum_repeat(self) -> int:
-        return pulumi.get(self, "maximum_repeat")
-
-    @property
-    @pulumi.getter(name="minimumQuantity")
-    def minimum_quantity(self) -> int:
-        return pulumi.get(self, "minimum_quantity")
-
-    @property
-    @pulumi.getter(name="minimumRepeat")
-    def minimum_repeat(self) -> int:
-        return pulumi.get(self, "minimum_repeat")
-
-    @property
-    @pulumi.getter(name="priceInUcents")
-    def price_in_ucents(self) -> int:
-        return pulumi.get(self, "price_in_ucents")
-
-    @property
-    @pulumi.getter
-    def prices(self) -> Sequence['outputs.GetOvh_Order_Cart_Product_PlanSelectedPricePriceResult']:
-        return pulumi.get(self, "prices")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="pricingType")
-    def pricing_type(self) -> str:
-        return pulumi.get(self, "pricing_type")
-
-
-@pulumi.output_type
-class GetOvh_Order_Cart_Product_PlanSelectedPricePriceResult(dict):
-    def __init__(__self__, *,
-                 currency_code: str,
-                 text: str,
-                 value: float):
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> str:
-        return pulumi.get(self, "currency_code")
-
-    @property
-    @pulumi.getter
-    def text(self) -> str:
-        return pulumi.get(self, "text")
-
-    @property
-    @pulumi.getter
-    def value(self) -> float:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectOrder(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "expirationDate":
-            suggest = "expiration_date"
-        elif key == "orderId":
-            suggest = "order_id"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_projectOrder. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_projectOrder.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_projectOrder.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 date: Optional[str] = None,
-                 details: Optional[Sequence['outputs.Ovh_cloud_projectOrderDetail']] = None,
-                 expiration_date: Optional[str] = None,
-                 order_id: Optional[int] = None):
-        if date is not None:
-            pulumi.set(__self__, "date", date)
-        if details is not None:
-            pulumi.set(__self__, "details", details)
-        if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
-        if order_id is not None:
-            pulumi.set(__self__, "order_id", order_id)
-
-    @property
-    @pulumi.getter
-    def date(self) -> Optional[str]:
-        return pulumi.get(self, "date")
-
-    @property
-    @pulumi.getter
-    def details(self) -> Optional[Sequence['outputs.Ovh_cloud_projectOrderDetail']]:
-        return pulumi.get(self, "details")
-
-    @property
-    @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[str]:
-        return pulumi.get(self, "expiration_date")
-
-    @property
-    @pulumi.getter(name="orderId")
-    def order_id(self) -> Optional[int]:
-        return pulumi.get(self, "order_id")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectOrderDetail(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "orderDetailId":
-            suggest = "order_detail_id"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_projectOrderDetail. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_projectOrderDetail.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_projectOrderDetail.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 description: Optional[str] = None,
-                 domain: Optional[str] = None,
-                 order_detail_id: Optional[int] = None,
-                 quantity: Optional[str] = None):
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if order_detail_id is not None:
-            pulumi.set(__self__, "order_detail_id", order_detail_id)
-        if quantity is not None:
-            pulumi.set(__self__, "quantity", quantity)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[str]:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[str]:
-        return pulumi.get(self, "domain")
-
-    @property
-    @pulumi.getter(name="orderDetailId")
-    def order_detail_id(self) -> Optional[int]:
-        return pulumi.get(self, "order_detail_id")
-
-    @property
-    @pulumi.getter
-    def quantity(self) -> Optional[str]:
-        return pulumi.get(self, "quantity")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectPlan(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "planCode":
-            suggest = "plan_code"
-        elif key == "pricingMode":
-            suggest = "pricing_mode"
-        elif key == "catalogName":
-            suggest = "catalog_name"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_projectPlan. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_projectPlan.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_projectPlan.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 duration: str,
-                 plan_code: str,
-                 pricing_mode: str,
-                 catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_cloud_projectPlanConfiguration']] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[str]:
-        return pulumi.get(self, "catalog_name")
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_cloud_projectPlanConfiguration']]:
-        return pulumi.get(self, "configurations")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectPlanConfiguration(dict):
-    def __init__(__self__, *,
-                 label: str,
-                 value: str):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> str:
-        return pulumi.get(self, "label")
-
-    @property
-    @pulumi.getter
-    def value(self) -> str:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectPlanOption(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "planCode":
-            suggest = "plan_code"
-        elif key == "pricingMode":
-            suggest = "pricing_mode"
-        elif key == "catalogName":
-            suggest = "catalog_name"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_projectPlanOption. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_projectPlanOption.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_projectPlanOption.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 duration: str,
-                 plan_code: str,
-                 pricing_mode: str,
-                 catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_cloud_projectPlanOptionConfiguration']] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[str]:
-        return pulumi.get(self, "catalog_name")
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_cloud_projectPlanOptionConfiguration']]:
-        return pulumi.get(self, "configurations")
-
-
-@pulumi.output_type
-class Ovh_cloud_projectPlanOptionConfiguration(dict):
-    def __init__(__self__, *,
-                 label: str,
-                 value: str):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> str:
-        return pulumi.get(self, "label")
-
-    @property
-    @pulumi.getter
-    def value(self) -> str:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class Ovh_cloud_project_containerregistryPlan(dict):
+class CloudProjectContainerregistryPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -1670,23 +105,23 @@ class Ovh_cloud_project_containerregistryPlan(dict):
             suggest = "updated_at"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_project_containerregistryPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectContainerregistryPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_project_containerregistryPlan.__key_warning(key)
+        CloudProjectContainerregistryPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_project_containerregistryPlan.__key_warning(key)
+        CloudProjectContainerregistryPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
                  code: Optional[str] = None,
                  created_at: Optional[str] = None,
-                 features: Optional[Sequence['outputs.Ovh_cloud_project_containerregistryPlanFeature']] = None,
+                 features: Optional[Sequence['outputs.CloudProjectContainerregistryPlanFeature']] = None,
                  id: Optional[str] = None,
                  name: Optional[str] = None,
-                 registry_limits: Optional[Sequence['outputs.Ovh_cloud_project_containerregistryPlanRegistryLimit']] = None,
+                 registry_limits: Optional[Sequence['outputs.CloudProjectContainerregistryPlanRegistryLimit']] = None,
                  updated_at: Optional[str] = None):
         if code is not None:
             pulumi.set(__self__, "code", code)
@@ -1715,7 +150,7 @@ class Ovh_cloud_project_containerregistryPlan(dict):
 
     @property
     @pulumi.getter
-    def features(self) -> Optional[Sequence['outputs.Ovh_cloud_project_containerregistryPlanFeature']]:
+    def features(self) -> Optional[Sequence['outputs.CloudProjectContainerregistryPlanFeature']]:
         return pulumi.get(self, "features")
 
     @property
@@ -1730,7 +165,7 @@ class Ovh_cloud_project_containerregistryPlan(dict):
 
     @property
     @pulumi.getter(name="registryLimits")
-    def registry_limits(self) -> Optional[Sequence['outputs.Ovh_cloud_project_containerregistryPlanRegistryLimit']]:
+    def registry_limits(self) -> Optional[Sequence['outputs.CloudProjectContainerregistryPlanRegistryLimit']]:
         return pulumi.get(self, "registry_limits")
 
     @property
@@ -1740,7 +175,7 @@ class Ovh_cloud_project_containerregistryPlan(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_containerregistryPlanFeature(dict):
+class CloudProjectContainerregistryPlanFeature(dict):
     def __init__(__self__, *,
                  vulnerability: Optional[bool] = None):
         if vulnerability is not None:
@@ -1753,7 +188,7 @@ class Ovh_cloud_project_containerregistryPlanFeature(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_containerregistryPlanRegistryLimit(dict):
+class CloudProjectContainerregistryPlanRegistryLimit(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -1763,14 +198,14 @@ class Ovh_cloud_project_containerregistryPlanRegistryLimit(dict):
             suggest = "parallel_request"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_cloud_project_containerregistryPlanRegistryLimit. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectContainerregistryPlanRegistryLimit. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_cloud_project_containerregistryPlanRegistryLimit.__key_warning(key)
+        CloudProjectContainerregistryPlanRegistryLimit.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_cloud_project_containerregistryPlanRegistryLimit.__key_warning(key)
+        CloudProjectContainerregistryPlanRegistryLimit.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -1793,7 +228,7 @@ class Ovh_cloud_project_containerregistryPlanRegistryLimit(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_network_privateRegionsAttribute(dict):
+class CloudProjectNetworkPrivateRegionsAttribute(dict):
     def __init__(__self__, *,
                  status: str,
                  openstackid: Optional[str] = None,
@@ -1821,7 +256,7 @@ class Ovh_cloud_project_network_privateRegionsAttribute(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_network_privateRegionsStatus(dict):
+class CloudProjectNetworkPrivateRegionsStatus(dict):
     def __init__(__self__, *,
                  status: str,
                  region: Optional[str] = None):
@@ -1841,7 +276,7 @@ class Ovh_cloud_project_network_privateRegionsStatus(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_network_private_subnetIpPool(dict):
+class CloudProjectNetworkPrivateSubnetIpPool(dict):
     def __init__(__self__, *,
                  dhcp: Optional[bool] = None,
                  end: Optional[str] = None,
@@ -1886,7 +321,281 @@ class Ovh_cloud_project_network_private_subnetIpPool(dict):
 
 
 @pulumi.output_type
-class Ovh_cloud_project_userRole(dict):
+class CloudProjectOrder(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "expirationDate":
+            suggest = "expiration_date"
+        elif key == "orderId":
+            suggest = "order_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectOrder. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudProjectOrder.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudProjectOrder.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 date: Optional[str] = None,
+                 details: Optional[Sequence['outputs.CloudProjectOrderDetail']] = None,
+                 expiration_date: Optional[str] = None,
+                 order_id: Optional[int] = None):
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if order_id is not None:
+            pulumi.set(__self__, "order_id", order_id)
+
+    @property
+    @pulumi.getter
+    def date(self) -> Optional[str]:
+        return pulumi.get(self, "date")
+
+    @property
+    @pulumi.getter
+    def details(self) -> Optional[Sequence['outputs.CloudProjectOrderDetail']]:
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[str]:
+        return pulumi.get(self, "expiration_date")
+
+    @property
+    @pulumi.getter(name="orderId")
+    def order_id(self) -> Optional[int]:
+        return pulumi.get(self, "order_id")
+
+
+@pulumi.output_type
+class CloudProjectOrderDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "orderDetailId":
+            suggest = "order_detail_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectOrderDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudProjectOrderDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudProjectOrderDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 domain: Optional[str] = None,
+                 order_detail_id: Optional[int] = None,
+                 quantity: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if order_detail_id is not None:
+            pulumi.set(__self__, "order_detail_id", order_detail_id)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="orderDetailId")
+    def order_detail_id(self) -> Optional[int]:
+        return pulumi.get(self, "order_detail_id")
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> Optional[str]:
+        return pulumi.get(self, "quantity")
+
+
+@pulumi.output_type
+class CloudProjectPlan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "planCode":
+            suggest = "plan_code"
+        elif key == "pricingMode":
+            suggest = "pricing_mode"
+        elif key == "catalogName":
+            suggest = "catalog_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectPlan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudProjectPlan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudProjectPlan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: str,
+                 plan_code: str,
+                 pricing_mode: str,
+                 catalog_name: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.CloudProjectPlanConfiguration']] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[str]:
+        return pulumi.get(self, "catalog_name")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[Sequence['outputs.CloudProjectPlanConfiguration']]:
+        return pulumi.get(self, "configurations")
+
+
+@pulumi.output_type
+class CloudProjectPlanConfiguration(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 value: str):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class CloudProjectPlanOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "planCode":
+            suggest = "plan_code"
+        elif key == "pricingMode":
+            suggest = "pricing_mode"
+        elif key == "catalogName":
+            suggest = "catalog_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudProjectPlanOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudProjectPlanOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudProjectPlanOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: str,
+                 plan_code: str,
+                 pricing_mode: str,
+                 catalog_name: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.CloudProjectPlanOptionConfiguration']] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[str]:
+        return pulumi.get(self, "catalog_name")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[Sequence['outputs.CloudProjectPlanOptionConfiguration']]:
+        return pulumi.get(self, "configurations")
+
+
+@pulumi.output_type
+class CloudProjectPlanOptionConfiguration(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 value: str):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class CloudProjectUserRole(dict):
     def __init__(__self__, *,
                  description: Optional[str] = None,
                  id: Optional[str] = None,
@@ -1923,10 +632,10 @@ class Ovh_cloud_project_userRole(dict):
 
 
 @pulumi.output_type
-class Ovh_dbaas_logs_inputConfiguration(dict):
+class DbaasLogsInputConfiguration(dict):
     def __init__(__self__, *,
-                 flowgger: Optional['outputs.Ovh_dbaas_logs_inputConfigurationFlowgger'] = None,
-                 logstash: Optional['outputs.Ovh_dbaas_logs_inputConfigurationLogstash'] = None):
+                 flowgger: Optional['outputs.DbaasLogsInputConfigurationFlowgger'] = None,
+                 logstash: Optional['outputs.DbaasLogsInputConfigurationLogstash'] = None):
         if flowgger is not None:
             pulumi.set(__self__, "flowgger", flowgger)
         if logstash is not None:
@@ -1934,17 +643,17 @@ class Ovh_dbaas_logs_inputConfiguration(dict):
 
     @property
     @pulumi.getter
-    def flowgger(self) -> Optional['outputs.Ovh_dbaas_logs_inputConfigurationFlowgger']:
+    def flowgger(self) -> Optional['outputs.DbaasLogsInputConfigurationFlowgger']:
         return pulumi.get(self, "flowgger")
 
     @property
     @pulumi.getter
-    def logstash(self) -> Optional['outputs.Ovh_dbaas_logs_inputConfigurationLogstash']:
+    def logstash(self) -> Optional['outputs.DbaasLogsInputConfigurationLogstash']:
         return pulumi.get(self, "logstash")
 
 
 @pulumi.output_type
-class Ovh_dbaas_logs_inputConfigurationFlowgger(dict):
+class DbaasLogsInputConfigurationFlowgger(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -1954,14 +663,14 @@ class Ovh_dbaas_logs_inputConfigurationFlowgger(dict):
             suggest = "log_framing"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_dbaas_logs_inputConfigurationFlowgger. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbaasLogsInputConfigurationFlowgger. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_dbaas_logs_inputConfigurationFlowgger.__key_warning(key)
+        DbaasLogsInputConfigurationFlowgger.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_dbaas_logs_inputConfigurationFlowgger.__key_warning(key)
+        DbaasLogsInputConfigurationFlowgger.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -1982,7 +691,7 @@ class Ovh_dbaas_logs_inputConfigurationFlowgger(dict):
 
 
 @pulumi.output_type
-class Ovh_dbaas_logs_inputConfigurationLogstash(dict):
+class DbaasLogsInputConfigurationLogstash(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -1994,14 +703,14 @@ class Ovh_dbaas_logs_inputConfigurationLogstash(dict):
             suggest = "pattern_section"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_dbaas_logs_inputConfigurationLogstash. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DbaasLogsInputConfigurationLogstash. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_dbaas_logs_inputConfigurationLogstash.__key_warning(key)
+        DbaasLogsInputConfigurationLogstash.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_dbaas_logs_inputConfigurationLogstash.__key_warning(key)
+        DbaasLogsInputConfigurationLogstash.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2031,7 +740,7 @@ class Ovh_dbaas_logs_inputConfigurationLogstash(dict):
 
 
 @pulumi.output_type
-class Ovh_dedicated_server_install_taskDetails(dict):
+class DedicatedServerInstallTaskDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2063,14 +772,14 @@ class Ovh_dedicated_server_install_taskDetails(dict):
             suggest = "use_spla"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_dedicated_server_install_taskDetails. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DedicatedServerInstallTaskDetails. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_dedicated_server_install_taskDetails.__key_warning(key)
+        DedicatedServerInstallTaskDetails.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_dedicated_server_install_taskDetails.__key_warning(key)
+        DedicatedServerInstallTaskDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2189,7 +898,7 @@ class Ovh_dedicated_server_install_taskDetails(dict):
 
 
 @pulumi.output_type
-class Ovh_domain_zoneOrder(dict):
+class DomainZoneOrder(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2199,19 +908,19 @@ class Ovh_domain_zoneOrder(dict):
             suggest = "order_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_domain_zoneOrder. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DomainZoneOrder. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_domain_zoneOrder.__key_warning(key)
+        DomainZoneOrder.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_domain_zoneOrder.__key_warning(key)
+        DomainZoneOrder.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
                  date: Optional[str] = None,
-                 details: Optional[Sequence['outputs.Ovh_domain_zoneOrderDetail']] = None,
+                 details: Optional[Sequence['outputs.DomainZoneOrderDetail']] = None,
                  expiration_date: Optional[str] = None,
                  order_id: Optional[int] = None):
         if date is not None:
@@ -2230,7 +939,7 @@ class Ovh_domain_zoneOrder(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[Sequence['outputs.Ovh_domain_zoneOrderDetail']]:
+    def details(self) -> Optional[Sequence['outputs.DomainZoneOrderDetail']]:
         return pulumi.get(self, "details")
 
     @property
@@ -2245,7 +954,7 @@ class Ovh_domain_zoneOrder(dict):
 
 
 @pulumi.output_type
-class Ovh_domain_zoneOrderDetail(dict):
+class DomainZoneOrderDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2253,14 +962,14 @@ class Ovh_domain_zoneOrderDetail(dict):
             suggest = "order_detail_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_domain_zoneOrderDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DomainZoneOrderDetail. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_domain_zoneOrderDetail.__key_warning(key)
+        DomainZoneOrderDetail.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_domain_zoneOrderDetail.__key_warning(key)
+        DomainZoneOrderDetail.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2299,7 +1008,7 @@ class Ovh_domain_zoneOrderDetail(dict):
 
 
 @pulumi.output_type
-class Ovh_domain_zonePlan(dict):
+class DomainZonePlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2311,14 +1020,14 @@ class Ovh_domain_zonePlan(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_domain_zonePlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DomainZonePlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_domain_zonePlan.__key_warning(key)
+        DomainZonePlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_domain_zonePlan.__key_warning(key)
+        DomainZonePlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2326,7 +1035,7 @@ class Ovh_domain_zonePlan(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_domain_zonePlanConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.DomainZonePlanConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2357,12 +1066,12 @@ class Ovh_domain_zonePlan(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_domain_zonePlanConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.DomainZonePlanConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_domain_zonePlanConfiguration(dict):
+class DomainZonePlanConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -2381,7 +1090,7 @@ class Ovh_domain_zonePlanConfiguration(dict):
 
 
 @pulumi.output_type
-class Ovh_domain_zonePlanOption(dict):
+class DomainZonePlanOption(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2393,14 +1102,14 @@ class Ovh_domain_zonePlanOption(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_domain_zonePlanOption. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in DomainZonePlanOption. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_domain_zonePlanOption.__key_warning(key)
+        DomainZonePlanOption.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_domain_zonePlanOption.__key_warning(key)
+        DomainZonePlanOption.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2408,7 +1117,7 @@ class Ovh_domain_zonePlanOption(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_domain_zonePlanOptionConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.DomainZonePlanOptionConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2439,12 +1148,12 @@ class Ovh_domain_zonePlanOption(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_domain_zonePlanOptionConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.DomainZonePlanOptionConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_domain_zonePlanOptionConfiguration(dict):
+class DomainZonePlanOptionConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -2463,7 +1172,7 @@ class Ovh_domain_zonePlanOptionConfiguration(dict):
 
 
 @pulumi.output_type
-class Ovh_ip_serviceOrder(dict):
+class IpServiceOrder(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2473,19 +1182,19 @@ class Ovh_ip_serviceOrder(dict):
             suggest = "order_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_ip_serviceOrder. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpServiceOrder. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_ip_serviceOrder.__key_warning(key)
+        IpServiceOrder.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_ip_serviceOrder.__key_warning(key)
+        IpServiceOrder.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
                  date: Optional[str] = None,
-                 details: Optional[Sequence['outputs.Ovh_ip_serviceOrderDetail']] = None,
+                 details: Optional[Sequence['outputs.IpServiceOrderDetail']] = None,
                  expiration_date: Optional[str] = None,
                  order_id: Optional[int] = None):
         if date is not None:
@@ -2504,7 +1213,7 @@ class Ovh_ip_serviceOrder(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[Sequence['outputs.Ovh_ip_serviceOrderDetail']]:
+    def details(self) -> Optional[Sequence['outputs.IpServiceOrderDetail']]:
         return pulumi.get(self, "details")
 
     @property
@@ -2519,7 +1228,7 @@ class Ovh_ip_serviceOrder(dict):
 
 
 @pulumi.output_type
-class Ovh_ip_serviceOrderDetail(dict):
+class IpServiceOrderDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2527,14 +1236,14 @@ class Ovh_ip_serviceOrderDetail(dict):
             suggest = "order_detail_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_ip_serviceOrderDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpServiceOrderDetail. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_ip_serviceOrderDetail.__key_warning(key)
+        IpServiceOrderDetail.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_ip_serviceOrderDetail.__key_warning(key)
+        IpServiceOrderDetail.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2573,7 +1282,7 @@ class Ovh_ip_serviceOrderDetail(dict):
 
 
 @pulumi.output_type
-class Ovh_ip_servicePlan(dict):
+class IpServicePlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2585,14 +1294,14 @@ class Ovh_ip_servicePlan(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_ip_servicePlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpServicePlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_ip_servicePlan.__key_warning(key)
+        IpServicePlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_ip_servicePlan.__key_warning(key)
+        IpServicePlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2600,7 +1309,7 @@ class Ovh_ip_servicePlan(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_ip_servicePlanConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.IpServicePlanConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2631,12 +1340,12 @@ class Ovh_ip_servicePlan(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_ip_servicePlanConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.IpServicePlanConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_ip_servicePlanConfiguration(dict):
+class IpServicePlanConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -2655,7 +1364,7 @@ class Ovh_ip_servicePlanConfiguration(dict):
 
 
 @pulumi.output_type
-class Ovh_ip_servicePlanOption(dict):
+class IpServicePlanOption(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2667,14 +1376,14 @@ class Ovh_ip_servicePlanOption(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_ip_servicePlanOption. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpServicePlanOption. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_ip_servicePlanOption.__key_warning(key)
+        IpServicePlanOption.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_ip_servicePlanOption.__key_warning(key)
+        IpServicePlanOption.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2682,7 +1391,7 @@ class Ovh_ip_servicePlanOption(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_ip_servicePlanOptionConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.IpServicePlanOptionConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -2713,12 +1422,12 @@ class Ovh_ip_servicePlanOption(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_ip_servicePlanOptionConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.IpServicePlanOptionConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_ip_servicePlanOptionConfiguration(dict):
+class IpServicePlanOptionConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -2737,7 +1446,7 @@ class Ovh_ip_servicePlanOptionConfiguration(dict):
 
 
 @pulumi.output_type
-class Ovh_ip_serviceRoutedTo(dict):
+class IpServiceRoutedTo(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -2745,14 +1454,14 @@ class Ovh_ip_serviceRoutedTo(dict):
             suggest = "service_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_ip_serviceRoutedTo. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpServiceRoutedTo. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_ip_serviceRoutedTo.__key_warning(key)
+        IpServiceRoutedTo.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_ip_serviceRoutedTo.__key_warning(key)
+        IpServiceRoutedTo.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -2767,319 +1476,7 @@ class Ovh_ip_serviceRoutedTo(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancingOrder(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "expirationDate":
-            suggest = "expiration_date"
-        elif key == "orderId":
-            suggest = "order_id"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancingOrder. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancingOrder.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancingOrder.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 date: Optional[str] = None,
-                 details: Optional[Sequence['outputs.Ovh_iploadbalancingOrderDetail']] = None,
-                 expiration_date: Optional[str] = None,
-                 order_id: Optional[int] = None):
-        if date is not None:
-            pulumi.set(__self__, "date", date)
-        if details is not None:
-            pulumi.set(__self__, "details", details)
-        if expiration_date is not None:
-            pulumi.set(__self__, "expiration_date", expiration_date)
-        if order_id is not None:
-            pulumi.set(__self__, "order_id", order_id)
-
-    @property
-    @pulumi.getter
-    def date(self) -> Optional[str]:
-        return pulumi.get(self, "date")
-
-    @property
-    @pulumi.getter
-    def details(self) -> Optional[Sequence['outputs.Ovh_iploadbalancingOrderDetail']]:
-        return pulumi.get(self, "details")
-
-    @property
-    @pulumi.getter(name="expirationDate")
-    def expiration_date(self) -> Optional[str]:
-        return pulumi.get(self, "expiration_date")
-
-    @property
-    @pulumi.getter(name="orderId")
-    def order_id(self) -> Optional[int]:
-        return pulumi.get(self, "order_id")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingOrderDetail(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "orderDetailId":
-            suggest = "order_detail_id"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancingOrderDetail. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancingOrderDetail.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancingOrderDetail.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 description: Optional[str] = None,
-                 domain: Optional[str] = None,
-                 order_detail_id: Optional[int] = None,
-                 quantity: Optional[str] = None):
-        if description is not None:
-            pulumi.set(__self__, "description", description)
-        if domain is not None:
-            pulumi.set(__self__, "domain", domain)
-        if order_detail_id is not None:
-            pulumi.set(__self__, "order_detail_id", order_detail_id)
-        if quantity is not None:
-            pulumi.set(__self__, "quantity", quantity)
-
-    @property
-    @pulumi.getter
-    def description(self) -> Optional[str]:
-        return pulumi.get(self, "description")
-
-    @property
-    @pulumi.getter
-    def domain(self) -> Optional[str]:
-        return pulumi.get(self, "domain")
-
-    @property
-    @pulumi.getter(name="orderDetailId")
-    def order_detail_id(self) -> Optional[int]:
-        return pulumi.get(self, "order_detail_id")
-
-    @property
-    @pulumi.getter
-    def quantity(self) -> Optional[str]:
-        return pulumi.get(self, "quantity")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingOrderableZone(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "planCode":
-            suggest = "plan_code"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancingOrderableZone. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancingOrderableZone.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancingOrderableZone.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 name: Optional[str] = None,
-                 plan_code: Optional[str] = None):
-        if name is not None:
-            pulumi.set(__self__, "name", name)
-        if plan_code is not None:
-            pulumi.set(__self__, "plan_code", plan_code)
-
-    @property
-    @pulumi.getter
-    def name(self) -> Optional[str]:
-        return pulumi.get(self, "name")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> Optional[str]:
-        return pulumi.get(self, "plan_code")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingPlan(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "planCode":
-            suggest = "plan_code"
-        elif key == "pricingMode":
-            suggest = "pricing_mode"
-        elif key == "catalogName":
-            suggest = "catalog_name"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancingPlan. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancingPlan.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancingPlan.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 duration: str,
-                 plan_code: str,
-                 pricing_mode: str,
-                 catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_iploadbalancingPlanConfiguration']] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[str]:
-        return pulumi.get(self, "catalog_name")
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_iploadbalancingPlanConfiguration']]:
-        return pulumi.get(self, "configurations")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingPlanConfiguration(dict):
-    def __init__(__self__, *,
-                 label: str,
-                 value: str):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> str:
-        return pulumi.get(self, "label")
-
-    @property
-    @pulumi.getter
-    def value(self) -> str:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingPlanOption(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "planCode":
-            suggest = "plan_code"
-        elif key == "pricingMode":
-            suggest = "pricing_mode"
-        elif key == "catalogName":
-            suggest = "catalog_name"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancingPlanOption. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancingPlanOption.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancingPlanOption.__key_warning(key)
-        return super().get(key, default)
-
-    def __init__(__self__, *,
-                 duration: str,
-                 plan_code: str,
-                 pricing_mode: str,
-                 catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_iploadbalancingPlanOptionConfiguration']] = None):
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "plan_code", plan_code)
-        pulumi.set(__self__, "pricing_mode", pricing_mode)
-        if catalog_name is not None:
-            pulumi.set(__self__, "catalog_name", catalog_name)
-        if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
-
-    @property
-    @pulumi.getter
-    def duration(self) -> str:
-        return pulumi.get(self, "duration")
-
-    @property
-    @pulumi.getter(name="planCode")
-    def plan_code(self) -> str:
-        return pulumi.get(self, "plan_code")
-
-    @property
-    @pulumi.getter(name="pricingMode")
-    def pricing_mode(self) -> str:
-        return pulumi.get(self, "pricing_mode")
-
-    @property
-    @pulumi.getter(name="catalogName")
-    def catalog_name(self) -> Optional[str]:
-        return pulumi.get(self, "catalog_name")
-
-    @property
-    @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_iploadbalancingPlanOptionConfiguration']]:
-        return pulumi.get(self, "configurations")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancingPlanOptionConfiguration(dict):
-    def __init__(__self__, *,
-                 label: str,
-                 value: str):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "value", value)
-
-    @property
-    @pulumi.getter
-    def label(self) -> str:
-        return pulumi.get(self, "label")
-
-    @property
-    @pulumi.getter
-    def value(self) -> str:
-        return pulumi.get(self, "value")
-
-
-@pulumi.output_type
-class Ovh_iploadbalancing_http_farmProbe(dict):
+class IploadbalancingHttpFarmProbe(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3087,14 +1484,14 @@ class Ovh_iploadbalancing_http_farmProbe(dict):
             suggest = "force_ssl"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancing_http_farmProbe. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingHttpFarmProbe. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancing_http_farmProbe.__key_warning(key)
+        IploadbalancingHttpFarmProbe.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancing_http_farmProbe.__key_warning(key)
+        IploadbalancingHttpFarmProbe.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3172,7 +1569,7 @@ class Ovh_iploadbalancing_http_farmProbe(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancing_http_routeAction(dict):
+class IploadbalancingHttpRouteAction(dict):
     def __init__(__self__, *,
                  type: str,
                  status: Optional[int] = None,
@@ -3200,7 +1597,7 @@ class Ovh_iploadbalancing_http_routeAction(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancing_http_routeRule(dict):
+class IploadbalancingHttpRouteRule(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3210,14 +1607,14 @@ class Ovh_iploadbalancing_http_routeRule(dict):
             suggest = "sub_field"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancing_http_routeRule. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingHttpRouteRule. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancing_http_routeRule.__key_warning(key)
+        IploadbalancingHttpRouteRule.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancing_http_routeRule.__key_warning(key)
+        IploadbalancingHttpRouteRule.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3272,7 +1669,319 @@ class Ovh_iploadbalancing_http_routeRule(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancing_tcp_farmProbe(dict):
+class IploadbalancingOrder(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "expirationDate":
+            suggest = "expiration_date"
+        elif key == "orderId":
+            suggest = "order_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingOrder. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IploadbalancingOrder.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IploadbalancingOrder.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 date: Optional[str] = None,
+                 details: Optional[Sequence['outputs.IploadbalancingOrderDetail']] = None,
+                 expiration_date: Optional[str] = None,
+                 order_id: Optional[int] = None):
+        if date is not None:
+            pulumi.set(__self__, "date", date)
+        if details is not None:
+            pulumi.set(__self__, "details", details)
+        if expiration_date is not None:
+            pulumi.set(__self__, "expiration_date", expiration_date)
+        if order_id is not None:
+            pulumi.set(__self__, "order_id", order_id)
+
+    @property
+    @pulumi.getter
+    def date(self) -> Optional[str]:
+        return pulumi.get(self, "date")
+
+    @property
+    @pulumi.getter
+    def details(self) -> Optional[Sequence['outputs.IploadbalancingOrderDetail']]:
+        return pulumi.get(self, "details")
+
+    @property
+    @pulumi.getter(name="expirationDate")
+    def expiration_date(self) -> Optional[str]:
+        return pulumi.get(self, "expiration_date")
+
+    @property
+    @pulumi.getter(name="orderId")
+    def order_id(self) -> Optional[int]:
+        return pulumi.get(self, "order_id")
+
+
+@pulumi.output_type
+class IploadbalancingOrderDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "orderDetailId":
+            suggest = "order_detail_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingOrderDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IploadbalancingOrderDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IploadbalancingOrderDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 description: Optional[str] = None,
+                 domain: Optional[str] = None,
+                 order_detail_id: Optional[int] = None,
+                 quantity: Optional[str] = None):
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if order_detail_id is not None:
+            pulumi.set(__self__, "order_detail_id", order_detail_id)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[str]:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> Optional[str]:
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="orderDetailId")
+    def order_detail_id(self) -> Optional[int]:
+        return pulumi.get(self, "order_detail_id")
+
+    @property
+    @pulumi.getter
+    def quantity(self) -> Optional[str]:
+        return pulumi.get(self, "quantity")
+
+
+@pulumi.output_type
+class IploadbalancingOrderableZone(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "planCode":
+            suggest = "plan_code"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingOrderableZone. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IploadbalancingOrderableZone.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IploadbalancingOrderableZone.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 plan_code: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if plan_code is not None:
+            pulumi.set(__self__, "plan_code", plan_code)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> Optional[str]:
+        return pulumi.get(self, "plan_code")
+
+
+@pulumi.output_type
+class IploadbalancingPlan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "planCode":
+            suggest = "plan_code"
+        elif key == "pricingMode":
+            suggest = "pricing_mode"
+        elif key == "catalogName":
+            suggest = "catalog_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingPlan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IploadbalancingPlan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IploadbalancingPlan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: str,
+                 plan_code: str,
+                 pricing_mode: str,
+                 catalog_name: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.IploadbalancingPlanConfiguration']] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[str]:
+        return pulumi.get(self, "catalog_name")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[Sequence['outputs.IploadbalancingPlanConfiguration']]:
+        return pulumi.get(self, "configurations")
+
+
+@pulumi.output_type
+class IploadbalancingPlanConfiguration(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 value: str):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IploadbalancingPlanOption(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "planCode":
+            suggest = "plan_code"
+        elif key == "pricingMode":
+            suggest = "pricing_mode"
+        elif key == "catalogName":
+            suggest = "catalog_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingPlanOption. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IploadbalancingPlanOption.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IploadbalancingPlanOption.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 duration: str,
+                 plan_code: str,
+                 pricing_mode: str,
+                 catalog_name: Optional[str] = None,
+                 configurations: Optional[Sequence['outputs.IploadbalancingPlanOptionConfiguration']] = None):
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> Optional[str]:
+        return pulumi.get(self, "catalog_name")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Optional[Sequence['outputs.IploadbalancingPlanOptionConfiguration']]:
+        return pulumi.get(self, "configurations")
+
+
+@pulumi.output_type
+class IploadbalancingPlanOptionConfiguration(dict):
+    def __init__(__self__, *,
+                 label: str,
+                 value: str):
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def label(self) -> str:
+        return pulumi.get(self, "label")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IploadbalancingTcpFarmProbe(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3280,14 +1989,14 @@ class Ovh_iploadbalancing_tcp_farmProbe(dict):
             suggest = "force_ssl"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancing_tcp_farmProbe. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingTcpFarmProbe. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancing_tcp_farmProbe.__key_warning(key)
+        IploadbalancingTcpFarmProbe.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancing_tcp_farmProbe.__key_warning(key)
+        IploadbalancingTcpFarmProbe.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3365,7 +2074,7 @@ class Ovh_iploadbalancing_tcp_farmProbe(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancing_tcp_routeAction(dict):
+class IploadbalancingTcpRouteAction(dict):
     def __init__(__self__, *,
                  type: str,
                  target: Optional[str] = None):
@@ -3385,7 +2094,7 @@ class Ovh_iploadbalancing_tcp_routeAction(dict):
 
 
 @pulumi.output_type
-class Ovh_iploadbalancing_tcp_routeRule(dict):
+class IploadbalancingTcpRouteRule(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3395,14 +2104,14 @@ class Ovh_iploadbalancing_tcp_routeRule(dict):
             suggest = "sub_field"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_iploadbalancing_tcp_routeRule. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IploadbalancingTcpRouteRule. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_iploadbalancing_tcp_routeRule.__key_warning(key)
+        IploadbalancingTcpRouteRule.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_iploadbalancing_tcp_routeRule.__key_warning(key)
+        IploadbalancingTcpRouteRule.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3457,7 +2166,7 @@ class Ovh_iploadbalancing_tcp_routeRule(dict):
 
 
 @pulumi.output_type
-class Ovh_me_installation_templateCustomization(dict):
+class MeInstallationTemplateCustomization(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3475,14 +2184,14 @@ class Ovh_me_installation_templateCustomization(dict):
             suggest = "use_distribution_kernel"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_me_installation_templateCustomization. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in MeInstallationTemplateCustomization. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_me_installation_templateCustomization.__key_warning(key)
+        MeInstallationTemplateCustomization.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_me_installation_templateCustomization.__key_warning(key)
+        MeInstallationTemplateCustomization.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3545,7 +2254,7 @@ class Ovh_me_installation_templateCustomization(dict):
 
 
 @pulumi.output_type
-class Ovh_vrackOrder(dict):
+class VrackOrder(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3555,19 +2264,19 @@ class Ovh_vrackOrder(dict):
             suggest = "order_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_vrackOrder. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in VrackOrder. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_vrackOrder.__key_warning(key)
+        VrackOrder.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_vrackOrder.__key_warning(key)
+        VrackOrder.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
                  date: Optional[str] = None,
-                 details: Optional[Sequence['outputs.Ovh_vrackOrderDetail']] = None,
+                 details: Optional[Sequence['outputs.VrackOrderDetail']] = None,
                  expiration_date: Optional[str] = None,
                  order_id: Optional[int] = None):
         if date is not None:
@@ -3586,7 +2295,7 @@ class Ovh_vrackOrder(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Optional[Sequence['outputs.Ovh_vrackOrderDetail']]:
+    def details(self) -> Optional[Sequence['outputs.VrackOrderDetail']]:
         return pulumi.get(self, "details")
 
     @property
@@ -3601,7 +2310,7 @@ class Ovh_vrackOrder(dict):
 
 
 @pulumi.output_type
-class Ovh_vrackOrderDetail(dict):
+class VrackOrderDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3609,14 +2318,14 @@ class Ovh_vrackOrderDetail(dict):
             suggest = "order_detail_id"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_vrackOrderDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in VrackOrderDetail. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_vrackOrderDetail.__key_warning(key)
+        VrackOrderDetail.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_vrackOrderDetail.__key_warning(key)
+        VrackOrderDetail.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3655,7 +2364,7 @@ class Ovh_vrackOrderDetail(dict):
 
 
 @pulumi.output_type
-class Ovh_vrackPlan(dict):
+class VrackPlan(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3667,14 +2376,14 @@ class Ovh_vrackPlan(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_vrackPlan. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in VrackPlan. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_vrackPlan.__key_warning(key)
+        VrackPlan.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_vrackPlan.__key_warning(key)
+        VrackPlan.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3682,7 +2391,7 @@ class Ovh_vrackPlan(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_vrackPlanConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.VrackPlanConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -3713,12 +2422,12 @@ class Ovh_vrackPlan(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_vrackPlanConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.VrackPlanConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_vrackPlanConfiguration(dict):
+class VrackPlanConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -3737,7 +2446,7 @@ class Ovh_vrackPlanConfiguration(dict):
 
 
 @pulumi.output_type
-class Ovh_vrackPlanOption(dict):
+class VrackPlanOption(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -3749,14 +2458,14 @@ class Ovh_vrackPlanOption(dict):
             suggest = "catalog_name"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in Ovh_vrackPlanOption. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in VrackPlanOption. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        Ovh_vrackPlanOption.__key_warning(key)
+        VrackPlanOption.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        Ovh_vrackPlanOption.__key_warning(key)
+        VrackPlanOption.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -3764,7 +2473,7 @@ class Ovh_vrackPlanOption(dict):
                  plan_code: str,
                  pricing_mode: str,
                  catalog_name: Optional[str] = None,
-                 configurations: Optional[Sequence['outputs.Ovh_vrackPlanOptionConfiguration']] = None):
+                 configurations: Optional[Sequence['outputs.VrackPlanOptionConfiguration']] = None):
         pulumi.set(__self__, "duration", duration)
         pulumi.set(__self__, "plan_code", plan_code)
         pulumi.set(__self__, "pricing_mode", pricing_mode)
@@ -3795,12 +2504,12 @@ class Ovh_vrackPlanOption(dict):
 
     @property
     @pulumi.getter
-    def configurations(self) -> Optional[Sequence['outputs.Ovh_vrackPlanOptionConfiguration']]:
+    def configurations(self) -> Optional[Sequence['outputs.VrackPlanOptionConfiguration']]:
         return pulumi.get(self, "configurations")
 
 
 @pulumi.output_type
-class Ovh_vrackPlanOptionConfiguration(dict):
+class VrackPlanOptionConfiguration(dict):
     def __init__(__self__, *,
                  label: str,
                  value: str):
@@ -3815,6 +2524,1297 @@ class Ovh_vrackPlanOptionConfiguration(dict):
     @property
     @pulumi.getter
     def value(self) -> str:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryFilterFeatureResult(dict):
+    def __init__(__self__, *,
+                 vulnerability: bool):
+        pulumi.set(__self__, "vulnerability", vulnerability)
+
+    @property
+    @pulumi.getter
+    def vulnerability(self) -> bool:
+        return pulumi.get(self, "vulnerability")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryFilterRegistryLimitResult(dict):
+    def __init__(__self__, *,
+                 image_storage: int,
+                 parallel_request: int):
+        pulumi.set(__self__, "image_storage", image_storage)
+        pulumi.set(__self__, "parallel_request", parallel_request)
+
+    @property
+    @pulumi.getter(name="imageStorage")
+    def image_storage(self) -> int:
+        return pulumi.get(self, "image_storage")
+
+    @property
+    @pulumi.getter(name="parallelRequest")
+    def parallel_request(self) -> int:
+        return pulumi.get(self, "parallel_request")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryResultResult(dict):
+    def __init__(__self__, *,
+                 plans: Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanResult'],
+                 region_name: str):
+        pulumi.set(__self__, "plans", plans)
+        pulumi.set(__self__, "region_name", region_name)
+
+    @property
+    @pulumi.getter
+    def plans(self) -> Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanResult']:
+        return pulumi.get(self, "plans")
+
+    @property
+    @pulumi.getter(name="regionName")
+    def region_name(self) -> str:
+        return pulumi.get(self, "region_name")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryResultPlanResult(dict):
+    def __init__(__self__, *,
+                 code: str,
+                 created_at: str,
+                 features: Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanFeatureResult'],
+                 id: str,
+                 name: str,
+                 registry_limits: Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimitResult'],
+                 updated_at: str):
+        pulumi.set(__self__, "code", code)
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "features", features)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "registry_limits", registry_limits)
+        pulumi.set(__self__, "updated_at", updated_at)
+
+    @property
+    @pulumi.getter
+    def code(self) -> str:
+        return pulumi.get(self, "code")
+
+    @property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> str:
+        return pulumi.get(self, "created_at")
+
+    @property
+    @pulumi.getter
+    def features(self) -> Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanFeatureResult']:
+        return pulumi.get(self, "features")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="registryLimits")
+    def registry_limits(self) -> Sequence['outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimitResult']:
+        return pulumi.get(self, "registry_limits")
+
+    @property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> str:
+        return pulumi.get(self, "updated_at")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryResultPlanFeatureResult(dict):
+    def __init__(__self__, *,
+                 vulnerability: bool):
+        pulumi.set(__self__, "vulnerability", vulnerability)
+
+    @property
+    @pulumi.getter
+    def vulnerability(self) -> bool:
+        return pulumi.get(self, "vulnerability")
+
+
+@pulumi.output_type
+class GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimitResult(dict):
+    def __init__(__self__, *,
+                 image_storage: int,
+                 parallel_request: int):
+        pulumi.set(__self__, "image_storage", image_storage)
+        pulumi.set(__self__, "parallel_request", parallel_request)
+
+    @property
+    @pulumi.getter(name="imageStorage")
+    def image_storage(self) -> int:
+        return pulumi.get(self, "image_storage")
+
+    @property
+    @pulumi.getter(name="parallelRequest")
+    def parallel_request(self) -> int:
+        return pulumi.get(self, "parallel_request")
+
+
+@pulumi.output_type
+class GetCloudProjectContainerregistriesResultResult(dict):
+    def __init__(__self__, *,
+                 created_at: str,
+                 id: str,
+                 name: str,
+                 project_id: str,
+                 region: str,
+                 size: int,
+                 status: str,
+                 updated_at: str,
+                 url: str,
+                 version: str):
+        pulumi.set(__self__, "created_at", created_at)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "updated_at", updated_at)
+        pulumi.set(__self__, "url", url)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="createdAt")
+    def created_at(self) -> str:
+        return pulumi.get(self, "created_at")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter
+    def size(self) -> int:
+        return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="updatedAt")
+    def updated_at(self) -> str:
+        return pulumi.get(self, "updated_at")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCloudProjectContainerregistryUsersResultResult(dict):
+    def __init__(__self__, *,
+                 email: str,
+                 id: str,
+                 user: str):
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "user", user)
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def user(self) -> str:
+        return pulumi.get(self, "user")
+
+
+@pulumi.output_type
+class GetCloudProjectRegionServiceResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 status: str):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "status", status)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetDedicatedServerVniResult(dict):
+    def __init__(__self__, *,
+                 enabled: bool,
+                 mode: str,
+                 name: str,
+                 nics: Sequence[str],
+                 server_name: str,
+                 uuid: str,
+                 vrack: str):
+        pulumi.set(__self__, "enabled", enabled)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "nics", nics)
+        pulumi.set(__self__, "server_name", server_name)
+        pulumi.set(__self__, "uuid", uuid)
+        pulumi.set(__self__, "vrack", vrack)
+
+    @property
+    @pulumi.getter
+    def enabled(self) -> bool:
+        return pulumi.get(self, "enabled")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def nics(self) -> Sequence[str]:
+        return pulumi.get(self, "nics")
+
+    @property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> str:
+        return pulumi.get(self, "server_name")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        return pulumi.get(self, "uuid")
+
+    @property
+    @pulumi.getter
+    def vrack(self) -> str:
+        return pulumi.get(self, "vrack")
+
+
+@pulumi.output_type
+class GetIpServiceRoutedToResult(dict):
+    def __init__(__self__, *,
+                 service_name: str):
+        pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
+class GetIploadbalancingOrderableZoneResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 plan_code: str):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "plan_code", plan_code)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+
+@pulumi.output_type
+class GetMeInstallationTemplateCustomizationResult(dict):
+    def __init__(__self__, *,
+                 change_log: str,
+                 custom_hostname: str,
+                 post_installation_script_link: str,
+                 post_installation_script_return: str,
+                 rating: int,
+                 ssh_key_name: str,
+                 use_distribution_kernel: bool):
+        pulumi.set(__self__, "change_log", change_log)
+        pulumi.set(__self__, "custom_hostname", custom_hostname)
+        pulumi.set(__self__, "post_installation_script_link", post_installation_script_link)
+        pulumi.set(__self__, "post_installation_script_return", post_installation_script_return)
+        pulumi.set(__self__, "rating", rating)
+        pulumi.set(__self__, "ssh_key_name", ssh_key_name)
+        pulumi.set(__self__, "use_distribution_kernel", use_distribution_kernel)
+
+    @property
+    @pulumi.getter(name="changeLog")
+    def change_log(self) -> str:
+        return pulumi.get(self, "change_log")
+
+    @property
+    @pulumi.getter(name="customHostname")
+    def custom_hostname(self) -> str:
+        return pulumi.get(self, "custom_hostname")
+
+    @property
+    @pulumi.getter(name="postInstallationScriptLink")
+    def post_installation_script_link(self) -> str:
+        return pulumi.get(self, "post_installation_script_link")
+
+    @property
+    @pulumi.getter(name="postInstallationScriptReturn")
+    def post_installation_script_return(self) -> str:
+        return pulumi.get(self, "post_installation_script_return")
+
+    @property
+    @pulumi.getter
+    def rating(self) -> int:
+        return pulumi.get(self, "rating")
+
+    @property
+    @pulumi.getter(name="sshKeyName")
+    def ssh_key_name(self) -> str:
+        return pulumi.get(self, "ssh_key_name")
+
+    @property
+    @pulumi.getter(name="useDistributionKernel")
+    def use_distribution_kernel(self) -> bool:
+        return pulumi.get(self, "use_distribution_kernel")
+
+
+@pulumi.output_type
+class GetMeInstallationTemplatePartitionSchemeResult(dict):
+    def __init__(__self__, *,
+                 hardware_raids: Sequence['outputs.GetMeInstallationTemplatePartitionSchemeHardwareRaidResult'],
+                 name: str,
+                 partitions: Sequence['outputs.GetMeInstallationTemplatePartitionSchemePartitionResult'],
+                 priority: int):
+        pulumi.set(__self__, "hardware_raids", hardware_raids)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "partitions", partitions)
+        pulumi.set(__self__, "priority", priority)
+
+    @property
+    @pulumi.getter(name="hardwareRaids")
+    def hardware_raids(self) -> Sequence['outputs.GetMeInstallationTemplatePartitionSchemeHardwareRaidResult']:
+        return pulumi.get(self, "hardware_raids")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def partitions(self) -> Sequence['outputs.GetMeInstallationTemplatePartitionSchemePartitionResult']:
+        return pulumi.get(self, "partitions")
+
+    @property
+    @pulumi.getter
+    def priority(self) -> int:
+        return pulumi.get(self, "priority")
+
+
+@pulumi.output_type
+class GetMeInstallationTemplatePartitionSchemeHardwareRaidResult(dict):
+    def __init__(__self__, *,
+                 disks: Sequence[str],
+                 mode: str,
+                 name: str,
+                 step: int):
+        pulumi.set(__self__, "disks", disks)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "step", step)
+
+    @property
+    @pulumi.getter
+    def disks(self) -> Sequence[str]:
+        return pulumi.get(self, "disks")
+
+    @property
+    @pulumi.getter
+    def mode(self) -> str:
+        return pulumi.get(self, "mode")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def step(self) -> int:
+        return pulumi.get(self, "step")
+
+
+@pulumi.output_type
+class GetMeInstallationTemplatePartitionSchemePartitionResult(dict):
+    def __init__(__self__, *,
+                 filesystem: str,
+                 mountpoint: str,
+                 order: int,
+                 raid: str,
+                 size: int,
+                 type: str,
+                 volume_name: str):
+        pulumi.set(__self__, "filesystem", filesystem)
+        pulumi.set(__self__, "mountpoint", mountpoint)
+        pulumi.set(__self__, "order", order)
+        pulumi.set(__self__, "raid", raid)
+        pulumi.set(__self__, "size", size)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "volume_name", volume_name)
+
+    @property
+    @pulumi.getter
+    def filesystem(self) -> str:
+        return pulumi.get(self, "filesystem")
+
+    @property
+    @pulumi.getter
+    def mountpoint(self) -> str:
+        return pulumi.get(self, "mountpoint")
+
+    @property
+    @pulumi.getter
+    def order(self) -> int:
+        return pulumi.get(self, "order")
+
+    @property
+    @pulumi.getter
+    def raid(self) -> str:
+        return pulumi.get(self, "raid")
+
+    @property
+    @pulumi.getter
+    def size(self) -> int:
+        return pulumi.get(self, "size")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="volumeName")
+    def volume_name(self) -> str:
+        return pulumi.get(self, "volume_name")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsPlanPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductOptionsPlanPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductOptionsPlanPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsPlanPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsPlanSelectedPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductOptionsPlanSelectedPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductOptionsPlanSelectedPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsPlanSelectedPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsResultResult(dict):
+    def __init__(__self__, *,
+                 exclusive: bool,
+                 family: str,
+                 mandatory: bool,
+                 plan_code: str,
+                 prices: Sequence['outputs.GetOrderCartProductOptionsResultPriceResult'],
+                 product_name: str,
+                 product_type: str):
+        pulumi.set(__self__, "exclusive", exclusive)
+        pulumi.set(__self__, "family", family)
+        pulumi.set(__self__, "mandatory", mandatory)
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "product_name", product_name)
+        pulumi.set(__self__, "product_type", product_type)
+
+    @property
+    @pulumi.getter
+    def exclusive(self) -> bool:
+        return pulumi.get(self, "exclusive")
+
+    @property
+    @pulumi.getter
+    def family(self) -> str:
+        return pulumi.get(self, "family")
+
+    @property
+    @pulumi.getter
+    def mandatory(self) -> bool:
+        return pulumi.get(self, "mandatory")
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductOptionsResultPriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> str:
+        return pulumi.get(self, "product_name")
+
+    @property
+    @pulumi.getter(name="productType")
+    def product_type(self) -> str:
+        return pulumi.get(self, "product_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsResultPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductOptionsResultPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductOptionsResultPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductOptionsResultPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrderCartProductPlanPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductPlanPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductPlanPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductPlanPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrderCartProductPlanSelectedPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductPlanSelectedPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductPlanSelectedPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductPlanSelectedPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOrderCartProductResultResult(dict):
+    def __init__(__self__, *,
+                 plan_code: str,
+                 prices: Sequence['outputs.GetOrderCartProductResultPriceResult'],
+                 product_name: str,
+                 product_type: str):
+        pulumi.set(__self__, "plan_code", plan_code)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "product_name", product_name)
+        pulumi.set(__self__, "product_type", product_type)
+
+    @property
+    @pulumi.getter(name="planCode")
+    def plan_code(self) -> str:
+        return pulumi.get(self, "plan_code")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductResultPriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="productName")
+    def product_name(self) -> str:
+        return pulumi.get(self, "product_name")
+
+    @property
+    @pulumi.getter(name="productType")
+    def product_type(self) -> str:
+        return pulumi.get(self, "product_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductResultPriceResult(dict):
+    def __init__(__self__, *,
+                 capacities: Sequence[Any],
+                 description: str,
+                 duration: str,
+                 interval: int,
+                 maximum_quantity: int,
+                 maximum_repeat: int,
+                 minimum_quantity: int,
+                 minimum_repeat: int,
+                 price_in_ucents: int,
+                 prices: Sequence['outputs.GetOrderCartProductResultPricePriceResult'],
+                 pricing_mode: str,
+                 pricing_type: str):
+        pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "duration", duration)
+        pulumi.set(__self__, "interval", interval)
+        pulumi.set(__self__, "maximum_quantity", maximum_quantity)
+        pulumi.set(__self__, "maximum_repeat", maximum_repeat)
+        pulumi.set(__self__, "minimum_quantity", minimum_quantity)
+        pulumi.set(__self__, "minimum_repeat", minimum_repeat)
+        pulumi.set(__self__, "price_in_ucents", price_in_ucents)
+        pulumi.set(__self__, "prices", prices)
+        pulumi.set(__self__, "pricing_mode", pricing_mode)
+        pulumi.set(__self__, "pricing_type", pricing_type)
+
+    @property
+    @pulumi.getter
+    def capacities(self) -> Sequence[Any]:
+        return pulumi.get(self, "capacities")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def duration(self) -> str:
+        return pulumi.get(self, "duration")
+
+    @property
+    @pulumi.getter
+    def interval(self) -> int:
+        return pulumi.get(self, "interval")
+
+    @property
+    @pulumi.getter(name="maximumQuantity")
+    def maximum_quantity(self) -> int:
+        return pulumi.get(self, "maximum_quantity")
+
+    @property
+    @pulumi.getter(name="maximumRepeat")
+    def maximum_repeat(self) -> int:
+        return pulumi.get(self, "maximum_repeat")
+
+    @property
+    @pulumi.getter(name="minimumQuantity")
+    def minimum_quantity(self) -> int:
+        return pulumi.get(self, "minimum_quantity")
+
+    @property
+    @pulumi.getter(name="minimumRepeat")
+    def minimum_repeat(self) -> int:
+        return pulumi.get(self, "minimum_repeat")
+
+    @property
+    @pulumi.getter(name="priceInUcents")
+    def price_in_ucents(self) -> int:
+        return pulumi.get(self, "price_in_ucents")
+
+    @property
+    @pulumi.getter
+    def prices(self) -> Sequence['outputs.GetOrderCartProductResultPricePriceResult']:
+        return pulumi.get(self, "prices")
+
+    @property
+    @pulumi.getter(name="pricingMode")
+    def pricing_mode(self) -> str:
+        return pulumi.get(self, "pricing_mode")
+
+    @property
+    @pulumi.getter(name="pricingType")
+    def pricing_type(self) -> str:
+        return pulumi.get(self, "pricing_type")
+
+
+@pulumi.output_type
+class GetOrderCartProductResultPricePriceResult(dict):
+    def __init__(__self__, *,
+                 currency_code: str,
+                 text: str,
+                 value: float):
+        pulumi.set(__self__, "currency_code", currency_code)
+        pulumi.set(__self__, "text", text)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="currencyCode")
+    def currency_code(self) -> str:
+        return pulumi.get(self, "currency_code")
+
+    @property
+    @pulumi.getter
+    def text(self) -> str:
+        return pulumi.get(self, "text")
+
+    @property
+    @pulumi.getter
+    def value(self) -> float:
         return pulumi.get(self, "value")
 
 

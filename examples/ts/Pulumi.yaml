@@ -1,0 +1,3 @@
+name: ts-ovh-test
+runtime: nodejs
+description: An example of creating OVH resources with Pulumi

@@ -4,336 +4,37 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
-export interface GetOvhCloud_Project_Capabilities_ContainerregistryResult {
-    plans: outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlan[];
-    regionName: string;
-}
-
-export interface GetOvhCloud_Project_Capabilities_ContainerregistryResultPlan {
+export interface CloudProjectContainerregistryPlan {
     code: string;
     createdAt: string;
-    features: outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeature[];
+    features: outputs.CloudProjectContainerregistryPlanFeature[];
     id: string;
     name: string;
-    registryLimits: outputs.GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimit[];
+    registryLimits: outputs.CloudProjectContainerregistryPlanRegistryLimit[];
     updatedAt: string;
 }
 
-export interface GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanFeature {
+export interface CloudProjectContainerregistryPlanFeature {
     vulnerability: boolean;
 }
 
-export interface GetOvhCloud_Project_Capabilities_ContainerregistryResultPlanRegistryLimit {
+export interface CloudProjectContainerregistryPlanRegistryLimit {
     imageStorage: number;
     parallelRequest: number;
 }
 
-export interface GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterFeature {
-    vulnerability: boolean;
-}
-
-export interface GetOvh_Cloud_Project_Capabilities_Containerregistry_FilterRegistryLimit {
-    imageStorage: number;
-    parallelRequest: number;
-}
-
-export interface GetOvh_Cloud_Project_ContainerregistriesResult {
-    createdAt: string;
-    id: string;
-    name: string;
-    projectId: string;
-    region: string;
-    size: number;
-    status: string;
-    updatedAt: string;
-    url: string;
-    version: string;
-}
-
-export interface GetOvh_Cloud_Project_Containerregistry_UsersResult {
-    email: string;
-    id: string;
-    user: string;
-}
-
-export interface GetOvh_Cloud_Project_RegionService {
-    name: string;
-    status: string;
-}
-
-export interface GetOvh_Dedicated_ServerVni {
-    enabled: boolean;
-    mode: string;
-    name: string;
-    nics: string[];
-    serverName: string;
-    uuid: string;
-    vrack: string;
-}
-
-export interface GetOvh_Ip_ServiceRoutedTo {
-    serviceName: string;
-}
-
-export interface GetOvh_IploadbalancingOrderableZone {
-    name: string;
-    planCode: string;
-}
-
-export interface GetOvh_Me_Installation_TemplateCustomization {
-    /**
-     * @deprecated field is not used anymore
-     */
-    changeLog: string;
-    customHostname: string;
-    postInstallationScriptLink: string;
-    postInstallationScriptReturn: string;
-    /**
-     * @deprecated field is not used anymore
-     */
-    rating: number;
-    sshKeyName: string;
-    useDistributionKernel: boolean;
-}
-
-export interface GetOvh_Me_Installation_TemplatePartitionScheme {
-    hardwareRaids: outputs.GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaid[];
-    name: string;
-    partitions: outputs.GetOvh_Me_Installation_TemplatePartitionSchemePartition[];
-    priority: number;
-}
-
-export interface GetOvh_Me_Installation_TemplatePartitionSchemeHardwareRaid {
-    disks: string[];
-    mode: string;
-    name: string;
-    step: number;
-}
-
-export interface GetOvh_Me_Installation_TemplatePartitionSchemePartition {
-    filesystem: string;
-    mountpoint: string;
-    order: number;
-    raid: string;
-    size: number;
-    type: string;
-    volumeName: string;
-}
-
-export interface GetOvh_Order_Cart_ProductResult {
-    planCode: string;
-    prices: outputs.GetOvh_Order_Cart_ProductResultPrice[];
-    productName: string;
-    productType: string;
-}
-
-export interface GetOvh_Order_Cart_ProductResultPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_ProductResultPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_ProductResultPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface GetOvh_Order_Cart_Product_OptionsResult {
-    exclusive: boolean;
-    family: string;
-    mandatory: boolean;
-    planCode: string;
-    prices: outputs.GetOvh_Order_Cart_Product_OptionsResultPrice[];
-    productName: string;
-    productType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_OptionsResultPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_Product_OptionsResultPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_OptionsResultPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface GetOvh_Order_Cart_Product_Options_PlanPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_Product_Options_PlanPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_Options_PlanPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface GetOvh_Order_Cart_Product_Options_PlanSelectedPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_Product_Options_PlanSelectedPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_Options_PlanSelectedPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface GetOvh_Order_Cart_Product_PlanPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_Product_PlanPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_PlanPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface GetOvh_Order_Cart_Product_PlanSelectedPrice {
-    capacities: any[];
-    description: string;
-    duration: string;
-    interval: number;
-    maximumQuantity: number;
-    maximumRepeat: number;
-    minimumQuantity: number;
-    minimumRepeat: number;
-    priceInUcents: number;
-    prices: outputs.GetOvh_Order_Cart_Product_PlanSelectedPricePrice[];
-    pricingMode: string;
-    pricingType: string;
-}
-
-export interface GetOvh_Order_Cart_Product_PlanSelectedPricePrice {
-    currencyCode: string;
-    text: string;
-    value: number;
-}
-
-export interface Ovh_cloud_projectOrder {
-    date: string;
-    details: outputs.Ovh_cloud_projectOrderDetail[];
-    expirationDate: string;
-    orderId: number;
-}
-
-export interface Ovh_cloud_projectOrderDetail {
-    description: string;
-    domain: string;
-    orderDetailId: number;
-    quantity: string;
-}
-
-export interface Ovh_cloud_projectPlan {
-    catalogName?: string;
-    configurations?: outputs.Ovh_cloud_projectPlanConfiguration[];
-    duration: string;
-    planCode: string;
-    pricingMode: string;
-}
-
-export interface Ovh_cloud_projectPlanConfiguration {
-    label: string;
-    value: string;
-}
-
-export interface Ovh_cloud_projectPlanOption {
-    catalogName?: string;
-    configurations?: outputs.Ovh_cloud_projectPlanOptionConfiguration[];
-    duration: string;
-    planCode: string;
-    pricingMode: string;
-}
-
-export interface Ovh_cloud_projectPlanOptionConfiguration {
-    label: string;
-    value: string;
-}
-
-export interface Ovh_cloud_project_containerregistryPlan {
-    code: string;
-    createdAt: string;
-    features: outputs.Ovh_cloud_project_containerregistryPlanFeature[];
-    id: string;
-    name: string;
-    registryLimits: outputs.Ovh_cloud_project_containerregistryPlanRegistryLimit[];
-    updatedAt: string;
-}
-
-export interface Ovh_cloud_project_containerregistryPlanFeature {
-    vulnerability: boolean;
-}
-
-export interface Ovh_cloud_project_containerregistryPlanRegistryLimit {
-    imageStorage: number;
-    parallelRequest: number;
-}
-
-export interface Ovh_cloud_project_network_privateRegionsAttribute {
+export interface CloudProjectNetworkPrivateRegionsAttribute {
     openstackid: string;
     region: string;
     status: string;
 }
 
-export interface Ovh_cloud_project_network_privateRegionsStatus {
+export interface CloudProjectNetworkPrivateRegionsStatus {
     region: string;
     status: string;
 }
 
-export interface Ovh_cloud_project_network_private_subnetIpPool {
+export interface CloudProjectNetworkPrivateSubnetIpPool {
     dhcp: boolean;
     end: string;
     network: string;
@@ -341,30 +42,70 @@ export interface Ovh_cloud_project_network_private_subnetIpPool {
     start: string;
 }
 
-export interface Ovh_cloud_project_userRole {
+export interface CloudProjectOrder {
+    date: string;
+    details: outputs.CloudProjectOrderDetail[];
+    expirationDate: string;
+    orderId: number;
+}
+
+export interface CloudProjectOrderDetail {
+    description: string;
+    domain: string;
+    orderDetailId: number;
+    quantity: string;
+}
+
+export interface CloudProjectPlan {
+    catalogName?: string;
+    configurations?: outputs.CloudProjectPlanConfiguration[];
+    duration: string;
+    planCode: string;
+    pricingMode: string;
+}
+
+export interface CloudProjectPlanConfiguration {
+    label: string;
+    value: string;
+}
+
+export interface CloudProjectPlanOption {
+    catalogName?: string;
+    configurations?: outputs.CloudProjectPlanOptionConfiguration[];
+    duration: string;
+    planCode: string;
+    pricingMode: string;
+}
+
+export interface CloudProjectPlanOptionConfiguration {
+    label: string;
+    value: string;
+}
+
+export interface CloudProjectUserRole {
     description: string;
     id: string;
     name: string;
     permissions: string[];
 }
 
-export interface Ovh_dbaas_logs_inputConfiguration {
-    flowgger?: outputs.Ovh_dbaas_logs_inputConfigurationFlowgger;
-    logstash?: outputs.Ovh_dbaas_logs_inputConfigurationLogstash;
+export interface DbaasLogsInputConfiguration {
+    flowgger?: outputs.DbaasLogsInputConfigurationFlowgger;
+    logstash?: outputs.DbaasLogsInputConfigurationLogstash;
 }
 
-export interface Ovh_dbaas_logs_inputConfigurationFlowgger {
+export interface DbaasLogsInputConfigurationFlowgger {
     logFormat: string;
     logFraming: string;
 }
 
-export interface Ovh_dbaas_logs_inputConfigurationLogstash {
+export interface DbaasLogsInputConfigurationLogstash {
     filterSection?: string;
     inputSection: string;
     patternSection?: string;
 }
 
-export interface Ovh_dedicated_server_install_taskDetails {
+export interface DedicatedServerInstallTaskDetails {
     /**
      * @deprecated field is not used anymore
      */
@@ -384,136 +125,350 @@ export interface Ovh_dedicated_server_install_taskDetails {
     useSpla?: boolean;
 }
 
-export interface Ovh_domain_zoneOrder {
+export interface DomainZoneOrder {
     date: string;
-    details: outputs.Ovh_domain_zoneOrderDetail[];
+    details: outputs.DomainZoneOrderDetail[];
     expirationDate: string;
     orderId: number;
 }
 
-export interface Ovh_domain_zoneOrderDetail {
+export interface DomainZoneOrderDetail {
     description: string;
     domain: string;
     orderDetailId: number;
     quantity: string;
 }
 
-export interface Ovh_domain_zonePlan {
+export interface DomainZonePlan {
     catalogName?: string;
-    configurations?: outputs.Ovh_domain_zonePlanConfiguration[];
+    configurations?: outputs.DomainZonePlanConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_domain_zonePlanConfiguration {
+export interface DomainZonePlanConfiguration {
     label: string;
     value: string;
 }
 
-export interface Ovh_domain_zonePlanOption {
+export interface DomainZonePlanOption {
     catalogName?: string;
-    configurations?: outputs.Ovh_domain_zonePlanOptionConfiguration[];
+    configurations?: outputs.DomainZonePlanOptionConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_domain_zonePlanOptionConfiguration {
+export interface DomainZonePlanOptionConfiguration {
     label: string;
     value: string;
 }
 
-export interface Ovh_ip_serviceOrder {
-    date: string;
-    details: outputs.Ovh_ip_serviceOrderDetail[];
-    expirationDate: string;
-    orderId: number;
+export interface GetCloudProjectCapabilitiesContainerregistryFilterFeature {
+    vulnerability: boolean;
 }
 
-export interface Ovh_ip_serviceOrderDetail {
-    description: string;
-    domain: string;
-    orderDetailId: number;
-    quantity: string;
+export interface GetCloudProjectCapabilitiesContainerregistryFilterRegistryLimit {
+    imageStorage: number;
+    parallelRequest: number;
 }
 
-export interface Ovh_ip_servicePlan {
-    catalogName?: string;
-    configurations?: outputs.Ovh_ip_servicePlanConfiguration[];
-    duration: string;
-    planCode: string;
-    pricingMode: string;
+export interface GetCloudProjectCapabilitiesContainerregistryResult {
+    plans: outputs.GetCloudProjectCapabilitiesContainerregistryResultPlan[];
+    regionName: string;
 }
 
-export interface Ovh_ip_servicePlanConfiguration {
-    label: string;
-    value: string;
+export interface GetCloudProjectCapabilitiesContainerregistryResultPlan {
+    code: string;
+    createdAt: string;
+    features: outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanFeature[];
+    id: string;
+    name: string;
+    registryLimits: outputs.GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimit[];
+    updatedAt: string;
 }
 
-export interface Ovh_ip_servicePlanOption {
-    catalogName?: string;
-    configurations?: outputs.Ovh_ip_servicePlanOptionConfiguration[];
-    duration: string;
-    planCode: string;
-    pricingMode: string;
+export interface GetCloudProjectCapabilitiesContainerregistryResultPlanFeature {
+    vulnerability: boolean;
 }
 
-export interface Ovh_ip_servicePlanOptionConfiguration {
-    label: string;
-    value: string;
+export interface GetCloudProjectCapabilitiesContainerregistryResultPlanRegistryLimit {
+    imageStorage: number;
+    parallelRequest: number;
 }
 
-export interface Ovh_ip_serviceRoutedTo {
+export interface GetCloudProjectContainerregistriesResult {
+    createdAt: string;
+    id: string;
+    name: string;
+    projectId: string;
+    region: string;
+    size: number;
+    status: string;
+    updatedAt: string;
+    url: string;
+    version: string;
+}
+
+export interface GetCloudProjectContainerregistryUsersResult {
+    email: string;
+    id: string;
+    user: string;
+}
+
+export interface GetCloudProjectRegionService {
+    name: string;
+    status: string;
+}
+
+export interface GetDedicatedServerVni {
+    enabled: boolean;
+    mode: string;
+    name: string;
+    nics: string[];
+    serverName: string;
+    uuid: string;
+    vrack: string;
+}
+
+export interface GetIpServiceRoutedTo {
     serviceName: string;
 }
 
-export interface Ovh_iploadbalancingOrder {
-    date: string;
-    details: outputs.Ovh_iploadbalancingOrderDetail[];
-    expirationDate: string;
-    orderId: number;
-}
-
-export interface Ovh_iploadbalancingOrderDetail {
-    description: string;
-    domain: string;
-    orderDetailId: number;
-    quantity: string;
-}
-
-export interface Ovh_iploadbalancingOrderableZone {
+export interface GetIploadbalancingOrderableZone {
     name: string;
     planCode: string;
 }
 
-export interface Ovh_iploadbalancingPlan {
+export interface GetMeInstallationTemplateCustomization {
+    /**
+     * @deprecated field is not used anymore
+     */
+    changeLog: string;
+    customHostname: string;
+    postInstallationScriptLink: string;
+    postInstallationScriptReturn: string;
+    /**
+     * @deprecated field is not used anymore
+     */
+    rating: number;
+    sshKeyName: string;
+    useDistributionKernel: boolean;
+}
+
+export interface GetMeInstallationTemplatePartitionScheme {
+    hardwareRaids: outputs.GetMeInstallationTemplatePartitionSchemeHardwareRaid[];
+    name: string;
+    partitions: outputs.GetMeInstallationTemplatePartitionSchemePartition[];
+    priority: number;
+}
+
+export interface GetMeInstallationTemplatePartitionSchemeHardwareRaid {
+    disks: string[];
+    mode: string;
+    name: string;
+    step: number;
+}
+
+export interface GetMeInstallationTemplatePartitionSchemePartition {
+    filesystem: string;
+    mountpoint: string;
+    order: number;
+    raid: string;
+    size: number;
+    type: string;
+    volumeName: string;
+}
+
+export interface GetOrderCartProductOptionsPlanPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductOptionsPlanPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductOptionsPlanPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface GetOrderCartProductOptionsPlanSelectedPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductOptionsPlanSelectedPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductOptionsPlanSelectedPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface GetOrderCartProductOptionsResult {
+    exclusive: boolean;
+    family: string;
+    mandatory: boolean;
+    planCode: string;
+    prices: outputs.GetOrderCartProductOptionsResultPrice[];
+    productName: string;
+    productType: string;
+}
+
+export interface GetOrderCartProductOptionsResultPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductOptionsResultPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductOptionsResultPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface GetOrderCartProductPlanPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductPlanPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductPlanPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface GetOrderCartProductPlanSelectedPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductPlanSelectedPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductPlanSelectedPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface GetOrderCartProductResult {
+    planCode: string;
+    prices: outputs.GetOrderCartProductResultPrice[];
+    productName: string;
+    productType: string;
+}
+
+export interface GetOrderCartProductResultPrice {
+    capacities: any[];
+    description: string;
+    duration: string;
+    interval: number;
+    maximumQuantity: number;
+    maximumRepeat: number;
+    minimumQuantity: number;
+    minimumRepeat: number;
+    priceInUcents: number;
+    prices: outputs.GetOrderCartProductResultPricePrice[];
+    pricingMode: string;
+    pricingType: string;
+}
+
+export interface GetOrderCartProductResultPricePrice {
+    currencyCode: string;
+    text: string;
+    value: number;
+}
+
+export interface IpServiceOrder {
+    date: string;
+    details: outputs.IpServiceOrderDetail[];
+    expirationDate: string;
+    orderId: number;
+}
+
+export interface IpServiceOrderDetail {
+    description: string;
+    domain: string;
+    orderDetailId: number;
+    quantity: string;
+}
+
+export interface IpServicePlan {
     catalogName?: string;
-    configurations?: outputs.Ovh_iploadbalancingPlanConfiguration[];
+    configurations?: outputs.IpServicePlanConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_iploadbalancingPlanConfiguration {
+export interface IpServicePlanConfiguration {
     label: string;
     value: string;
 }
 
-export interface Ovh_iploadbalancingPlanOption {
+export interface IpServicePlanOption {
     catalogName?: string;
-    configurations?: outputs.Ovh_iploadbalancingPlanOptionConfiguration[];
+    configurations?: outputs.IpServicePlanOptionConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_iploadbalancingPlanOptionConfiguration {
+export interface IpServicePlanOptionConfiguration {
     label: string;
     value: string;
 }
 
-export interface Ovh_iploadbalancing_http_farmProbe {
+export interface IpServiceRoutedTo {
+    serviceName: string;
+}
+
+export interface IploadbalancingHttpFarmProbe {
     forceSsl?: boolean;
     interval?: number;
     match: string;
@@ -525,13 +480,13 @@ export interface Ovh_iploadbalancing_http_farmProbe {
     url: string;
 }
 
-export interface Ovh_iploadbalancing_http_routeAction {
+export interface IploadbalancingHttpRouteAction {
     status?: number;
     target?: string;
     type: string;
 }
 
-export interface Ovh_iploadbalancing_http_routeRule {
+export interface IploadbalancingHttpRouteRule {
     field: string;
     match: string;
     negate: boolean;
@@ -540,7 +495,52 @@ export interface Ovh_iploadbalancing_http_routeRule {
     subField: string;
 }
 
-export interface Ovh_iploadbalancing_tcp_farmProbe {
+export interface IploadbalancingOrder {
+    date: string;
+    details: outputs.IploadbalancingOrderDetail[];
+    expirationDate: string;
+    orderId: number;
+}
+
+export interface IploadbalancingOrderDetail {
+    description: string;
+    domain: string;
+    orderDetailId: number;
+    quantity: string;
+}
+
+export interface IploadbalancingOrderableZone {
+    name: string;
+    planCode: string;
+}
+
+export interface IploadbalancingPlan {
+    catalogName?: string;
+    configurations?: outputs.IploadbalancingPlanConfiguration[];
+    duration: string;
+    planCode: string;
+    pricingMode: string;
+}
+
+export interface IploadbalancingPlanConfiguration {
+    label: string;
+    value: string;
+}
+
+export interface IploadbalancingPlanOption {
+    catalogName?: string;
+    configurations?: outputs.IploadbalancingPlanOptionConfiguration[];
+    duration: string;
+    planCode: string;
+    pricingMode: string;
+}
+
+export interface IploadbalancingPlanOptionConfiguration {
+    label: string;
+    value: string;
+}
+
+export interface IploadbalancingTcpFarmProbe {
     forceSsl?: boolean;
     interval?: number;
     match: string;
@@ -552,12 +552,12 @@ export interface Ovh_iploadbalancing_tcp_farmProbe {
     url?: string;
 }
 
-export interface Ovh_iploadbalancing_tcp_routeAction {
+export interface IploadbalancingTcpRouteAction {
     target?: string;
     type: string;
 }
 
-export interface Ovh_iploadbalancing_tcp_routeRule {
+export interface IploadbalancingTcpRouteRule {
     field: string;
     match: string;
     negate: boolean;
@@ -566,7 +566,7 @@ export interface Ovh_iploadbalancing_tcp_routeRule {
     subField: string;
 }
 
-export interface Ovh_me_installation_templateCustomization {
+export interface MeInstallationTemplateCustomization {
     /**
      * @deprecated field is not used anymore
      */
@@ -582,43 +582,42 @@ export interface Ovh_me_installation_templateCustomization {
     useDistributionKernel?: boolean;
 }
 
-export interface Ovh_vrackOrder {
+export interface VrackOrder {
     date: string;
-    details: outputs.Ovh_vrackOrderDetail[];
+    details: outputs.VrackOrderDetail[];
     expirationDate: string;
     orderId: number;
 }
 
-export interface Ovh_vrackOrderDetail {
+export interface VrackOrderDetail {
     description: string;
     domain: string;
     orderDetailId: number;
     quantity: string;
 }
 
-export interface Ovh_vrackPlan {
+export interface VrackPlan {
     catalogName?: string;
-    configurations?: outputs.Ovh_vrackPlanConfiguration[];
+    configurations?: outputs.VrackPlanConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_vrackPlanConfiguration {
+export interface VrackPlanConfiguration {
     label: string;
     value: string;
 }
 
-export interface Ovh_vrackPlanOption {
+export interface VrackPlanOption {
     catalogName?: string;
-    configurations?: outputs.Ovh_vrackPlanOptionConfiguration[];
+    configurations?: outputs.VrackPlanOptionConfiguration[];
     duration: string;
     planCode: string;
     pricingMode: string;
 }
 
-export interface Ovh_vrackPlanOptionConfiguration {
+export interface VrackPlanOptionConfiguration {
     label: string;
     value: string;
 }
-
