@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-xyz/provider
+module github.com/legitbee/pulumi-ovh/provider
 
 go 1.16
 
@@ -8,7 +8,10 @@ replace (
 )
 
 require (
+	github.com/hashicorp/hcl/v2 v2.3.0 // indirect
 	github.com/hashicorp/terraform-plugin-sdk v1.9.1
+	github.com/ovh/terraform-provider-ovh v0.16.0
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.9.0
-	github.com/pulumi/pulumi/sdk/v3 v3.14.0
+	github.com/pulumi/pulumi/sdk/v3 v3.14.1-0.20211007222624-789e39219452
+	github.com/zclconf/go-cty v1.8.4 // indirect
 )
