@@ -8,16 +8,16 @@ import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
-__all__ = ['IpReverseArgs', 'IpReverse']
+__all__ = ['IpReverseResourceArgs', 'IpReverseResource']
 
 @pulumi.input_type
-class IpReverseArgs:
+class IpReverseResourceArgs:
     def __init__(__self__, *,
                  ip: pulumi.Input[str],
                  ip_reverse: pulumi.Input[str],
                  reverse: pulumi.Input[str]):
         """
-        The set of arguments for constructing a IpReverse resource.
+        The set of arguments for constructing a IpReverseResource resource.
         """
         pulumi.set(__self__, "ip", ip)
         pulumi.set(__self__, "ip_reverse", ip_reverse)
@@ -52,13 +52,13 @@ class IpReverseArgs:
 
 
 @pulumi.input_type
-class _IpReverseState:
+class _IpReverseResourceState:
     def __init__(__self__, *,
                  ip: Optional[pulumi.Input[str]] = None,
                  ip_reverse: Optional[pulumi.Input[str]] = None,
                  reverse: Optional[pulumi.Input[str]] = None):
         """
-        Input properties used for looking up and filtering IpReverse resources.
+        Input properties used for looking up and filtering IpReverseResource resources.
         """
         if ip is not None:
             pulumi.set(__self__, "ip", ip)
@@ -95,7 +95,7 @@ class _IpReverseState:
         pulumi.set(self, "reverse", value)
 
 
-class IpReverse(pulumi.CustomResource):
+class IpReverseResource(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -105,7 +105,7 @@ class IpReverse(pulumi.CustomResource):
                  reverse: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a IpReverse resource with the given unique name, props, and options.
+        Create a IpReverseResource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
@@ -113,17 +113,17 @@ class IpReverse(pulumi.CustomResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: IpReverseArgs,
+                 args: IpReverseResourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a IpReverse resource with the given unique name, props, and options.
+        Create a IpReverseResource resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
-        :param IpReverseArgs args: The arguments to use to populate this resource's properties.
+        :param IpReverseResourceArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
         """
         ...
     def __init__(__self__, resource_name: str, *args, **kwargs):
-        resource_args, opts = _utilities.get_resource_args_opts(IpReverseArgs, pulumi.ResourceOptions, *args, **kwargs)
+        resource_args, opts = _utilities.get_resource_args_opts(IpReverseResourceArgs, pulumi.ResourceOptions, *args, **kwargs)
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
@@ -145,7 +145,7 @@ class IpReverse(pulumi.CustomResource):
         if opts.id is None:
             if __props__ is not None:
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
-            __props__ = IpReverseArgs.__new__(IpReverseArgs)
+            __props__ = IpReverseResourceArgs.__new__(IpReverseResourceArgs)
 
             if ip is None and not opts.urn:
                 raise TypeError("Missing required property 'ip'")
@@ -156,8 +156,8 @@ class IpReverse(pulumi.CustomResource):
             if reverse is None and not opts.urn:
                 raise TypeError("Missing required property 'reverse'")
             __props__.__dict__["reverse"] = reverse
-        super(IpReverse, __self__).__init__(
-            'ovh:index/ipReverse:IpReverse',
+        super(IpReverseResource, __self__).__init__(
+            'ovh:index/ipReverseResource:IpReverseResource',
             resource_name,
             __props__,
             opts)
@@ -168,9 +168,9 @@ class IpReverse(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             ip: Optional[pulumi.Input[str]] = None,
             ip_reverse: Optional[pulumi.Input[str]] = None,
-            reverse: Optional[pulumi.Input[str]] = None) -> 'IpReverse':
+            reverse: Optional[pulumi.Input[str]] = None) -> 'IpReverseResource':
         """
-        Get an existing IpReverse resource's state with the given name, id, and optional extra
+        Get an existing IpReverseResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
 
         :param str resource_name: The unique name of the resulting resource.
@@ -179,12 +179,12 @@ class IpReverse(pulumi.CustomResource):
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
-        __props__ = _IpReverseState.__new__(_IpReverseState)
+        __props__ = _IpReverseResourceState.__new__(_IpReverseResourceState)
 
         __props__.__dict__["ip"] = ip
         __props__.__dict__["ip_reverse"] = ip_reverse
         __props__.__dict__["reverse"] = reverse
-        return IpReverse(resource_name, opts=opts, __props__=__props__)
+        return IpReverseResource(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter

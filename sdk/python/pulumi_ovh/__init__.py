@@ -59,7 +59,7 @@ from .get_order_cart_product_options_plan import *
 from .get_order_cart_product_plan import *
 from .get_vps import *
 from .get_vracks import *
-from .ip_reverse import *
+from .ip_reverse_resource import *
 from .ip_service import *
 from .iploadbalancing import *
 from .iploadbalancing_http_farm import *
@@ -239,10 +239,10 @@ _utilities.register(
  },
  {
   "pkg": "ovh",
-  "mod": "index/ipReverse",
+  "mod": "index/ipReverseResource",
   "fqn": "pulumi_ovh",
   "classes": {
-   "ovh:index/ipReverse:IpReverse": "IpReverse"
+   "ovh:index/ipReverseResource:IpReverseResource": "IpReverseResource"
   }
  },
  {

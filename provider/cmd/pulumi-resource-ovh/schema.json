@@ -6489,7 +6489,7 @@
                 "type": "object"
             }
         },
-        "ovh:index/ipReverse:IpReverse": {
+        "ovh:index/ipReverseResource:IpReverseResource": {
             "properties": {
                 "ip": {
                     "type": "string"
@@ -6523,7 +6523,7 @@
                 "reverse"
             ],
             "stateInputs": {
-                "description": "Input properties used for looking up and filtering IpReverse resources.\n",
+                "description": "Input properties used for looking up and filtering IpReverseResource resources.\n",
                 "properties": {
                     "ip": {
                         "type": "string"

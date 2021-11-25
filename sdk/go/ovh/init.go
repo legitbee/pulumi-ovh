@@ -54,8 +54,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainZoneRecord{}
 	case "ovh:index/domainZoneRedirection:DomainZoneRedirection":
 		r = &DomainZoneRedirection{}
-	case "ovh:index/ipReverse:IpReverse":
-		r = &IpReverse{}
+	case "ovh:index/ipReverseResource:IpReverseResource":
+		r = &IpReverseResource{}
 	case "ovh:index/ipService:IpService":
 		r = &IpService{}
 	case "ovh:index/iploadbalancing:Iploadbalancing":
@@ -228,7 +228,7 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"ovh",
-		"index/ipReverse",
+		"index/ipReverseResource",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

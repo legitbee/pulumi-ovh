@@ -9,8 +9,8 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Ovh
 {
-    [OvhResourceType("ovh:index/ipReverse:IpReverse")]
-    public partial class IpReverse : Pulumi.CustomResource
+    [OvhResourceType("ovh:index/ipReverseResource:IpReverseResource")]
+    public partial class IpReverseResource : Pulumi.CustomResource
     {
         [Output("ip")]
         public Output<string> Ip { get; private set; } = null!;
@@ -23,19 +23,19 @@ namespace Pulumi.Ovh
 
 
         /// <summary>
-        /// Create a IpReverse resource with the given unique name, arguments, and options.
+        /// Create a IpReverseResource resource with the given unique name, arguments, and options.
         /// </summary>
         ///
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public IpReverse(string name, IpReverseArgs args, CustomResourceOptions? options = null)
-            : base("ovh:index/ipReverse:IpReverse", name, args ?? new IpReverseArgs(), MakeResourceOptions(options, ""))
+        public IpReverseResource(string name, IpReverseResourceArgs args, CustomResourceOptions? options = null)
+            : base("ovh:index/ipReverseResource:IpReverseResource", name, args ?? new IpReverseResourceArgs(), MakeResourceOptions(options, ""))
         {
         }
 
-        private IpReverse(string name, Input<string> id, IpReverseState? state = null, CustomResourceOptions? options = null)
-            : base("ovh:index/ipReverse:IpReverse", name, state, MakeResourceOptions(options, id))
+        private IpReverseResource(string name, Input<string> id, IpReverseResourceState? state = null, CustomResourceOptions? options = null)
+            : base("ovh:index/ipReverseResource:IpReverseResource", name, state, MakeResourceOptions(options, id))
         {
         }
 
@@ -51,7 +51,7 @@ namespace Pulumi.Ovh
             return merged;
         }
         /// <summary>
-        /// Get an existing IpReverse resource's state with the given name, ID, and optional extra
+        /// Get an existing IpReverseResource resource's state with the given name, ID, and optional extra
         /// properties used to qualify the lookup.
         /// </summary>
         ///
@@ -59,13 +59,13 @@ namespace Pulumi.Ovh
         /// <param name="id">The unique provider ID of the resource to lookup.</param>
         /// <param name="state">Any extra arguments used during the lookup.</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public static IpReverse Get(string name, Input<string> id, IpReverseState? state = null, CustomResourceOptions? options = null)
+        public static IpReverseResource Get(string name, Input<string> id, IpReverseResourceState? state = null, CustomResourceOptions? options = null)
         {
-            return new IpReverse(name, id, state, options);
+            return new IpReverseResource(name, id, state, options);
         }
     }
 
-    public sealed class IpReverseArgs : Pulumi.ResourceArgs
+    public sealed class IpReverseResourceArgs : Pulumi.ResourceArgs
     {
         [Input("ip", required: true)]
         public Input<string> Ip { get; set; } = null!;
@@ -76,12 +76,12 @@ namespace Pulumi.Ovh
         [Input("reverse", required: true)]
         public Input<string> Reverse { get; set; } = null!;
 
-        public IpReverseArgs()
+        public IpReverseResourceArgs()
         {
         }
     }
 
-    public sealed class IpReverseState : Pulumi.ResourceArgs
+    public sealed class IpReverseResourceState : Pulumi.ResourceArgs
     {
         [Input("ip")]
         public Input<string>? Ip { get; set; }
@@ -92,7 +92,7 @@ namespace Pulumi.Ovh
         [Input("reverse")]
         public Input<string>? Reverse { get; set; }
 
-        public IpReverseState()
+        public IpReverseResourceState()
         {
         }
     }

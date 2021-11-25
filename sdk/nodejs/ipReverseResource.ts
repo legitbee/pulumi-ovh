@@ -4,9 +4,9 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
-export class IpReverse extends pulumi.CustomResource {
+export class IpReverseResource extends pulumi.CustomResource {
     /**
-     * Get an existing IpReverse resource's state with the given name, ID, and optional extra
+     * Get an existing IpReverseResource resource's state with the given name, ID, and optional extra
      * properties used to qualify the lookup.
      *
      * @param name The _unique_ name of the resulting resource.
@@ -14,22 +14,22 @@ export class IpReverse extends pulumi.CustomResource {
      * @param state Any extra arguments used during the lookup.
      * @param opts Optional settings to control the behavior of the CustomResource.
      */
-    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: IpReverseState, opts?: pulumi.CustomResourceOptions): IpReverse {
-        return new IpReverse(name, <any>state, { ...opts, id: id });
+    public static get(name: string, id: pulumi.Input<pulumi.ID>, state?: IpReverseResourceState, opts?: pulumi.CustomResourceOptions): IpReverseResource {
+        return new IpReverseResource(name, <any>state, { ...opts, id: id });
     }
 
     /** @internal */
-    public static readonly __pulumiType = 'ovh:index/ipReverse:IpReverse';
+    public static readonly __pulumiType = 'ovh:index/ipReverseResource:IpReverseResource';
 
     /**
-     * Returns true if the given object is an instance of IpReverse.  This is designed to work even
+     * Returns true if the given object is an instance of IpReverseResource.  This is designed to work even
      * when multiple copies of the Pulumi SDK have been loaded into the same process.
      */
-    public static isInstance(obj: any): obj is IpReverse {
+    public static isInstance(obj: any): obj is IpReverseResource {
         if (obj === undefined || obj === null) {
             return false;
         }
-        return obj['__pulumiType'] === IpReverse.__pulumiType;
+        return obj['__pulumiType'] === IpReverseResource.__pulumiType;
     }
 
     public readonly ip!: pulumi.Output<string>;
@@ -37,23 +37,23 @@ export class IpReverse extends pulumi.CustomResource {
     public readonly reverse!: pulumi.Output<string>;
 
     /**
-     * Create a IpReverse resource with the given unique name, arguments, and options.
+     * Create a IpReverseResource resource with the given unique name, arguments, and options.
      *
      * @param name The _unique_ name of the resource.
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: IpReverseArgs, opts?: pulumi.CustomResourceOptions)
-    constructor(name: string, argsOrState?: IpReverseArgs | IpReverseState, opts?: pulumi.CustomResourceOptions) {
+    constructor(name: string, args: IpReverseResourceArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, argsOrState?: IpReverseResourceArgs | IpReverseResourceState, opts?: pulumi.CustomResourceOptions) {
         let inputs: pulumi.Inputs = {};
         opts = opts || {};
         if (opts.id) {
-            const state = argsOrState as IpReverseState | undefined;
+            const state = argsOrState as IpReverseResourceState | undefined;
             inputs["ip"] = state ? state.ip : undefined;
             inputs["ipReverse"] = state ? state.ipReverse : undefined;
             inputs["reverse"] = state ? state.reverse : undefined;
         } else {
-            const args = argsOrState as IpReverseArgs | undefined;
+            const args = argsOrState as IpReverseResourceArgs | undefined;
             if ((!args || args.ip === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'ip'");
             }
@@ -70,23 +70,23 @@ export class IpReverse extends pulumi.CustomResource {
         if (!opts.version) {
             opts = pulumi.mergeOptions(opts, { version: utilities.getVersion()});
         }
-        super(IpReverse.__pulumiType, name, inputs, opts);
+        super(IpReverseResource.__pulumiType, name, inputs, opts);
     }
 }
 
 /**
- * Input properties used for looking up and filtering IpReverse resources.
+ * Input properties used for looking up and filtering IpReverseResource resources.
  */
-export interface IpReverseState {
+export interface IpReverseResourceState {
     ip?: pulumi.Input<string>;
     ipReverse?: pulumi.Input<string>;
     reverse?: pulumi.Input<string>;
 }
 
 /**
- * The set of arguments for constructing a IpReverse resource.
+ * The set of arguments for constructing a IpReverseResource resource.
  */
-export interface IpReverseArgs {
+export interface IpReverseResourceArgs {
     ip: pulumi.Input<string>;
     ipReverse: pulumi.Input<string>;
     reverse: pulumi.Input<string>;

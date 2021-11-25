@@ -59,7 +59,7 @@ export * from "./getOrderCartProductOptionsPlan";
 export * from "./getOrderCartProductPlan";
 export * from "./getVps";
 export * from "./getVracks";
-export * from "./ipReverse";
+export * from "./ipReverseResource";
 export * from "./ipService";
 export * from "./iploadbalancing";
 export * from "./iploadbalancingHttpFarm";
@@ -116,7 +116,7 @@ import { DedicatedServerUpdate } from "./dedicatedServerUpdate";
 import { DomainZone } from "./domainZone";
 import { DomainZoneRecord } from "./domainZoneRecord";
 import { DomainZoneRedirection } from "./domainZoneRedirection";
-import { IpReverse } from "./ipReverse";
+import { IpReverseResource } from "./ipReverseResource";
 import { IpService } from "./ipService";
 import { Iploadbalancing } from "./iploadbalancing";
 import { IploadbalancingHttpFarm } from "./iploadbalancingHttpFarm";
@@ -183,8 +183,8 @@ const _module = {
                 return new DomainZoneRecord(name, <any>undefined, { urn })
             case "ovh:index/domainZoneRedirection:DomainZoneRedirection":
                 return new DomainZoneRedirection(name, <any>undefined, { urn })
-            case "ovh:index/ipReverse:IpReverse":
-                return new IpReverse(name, <any>undefined, { urn })
+            case "ovh:index/ipReverseResource:IpReverseResource":
+                return new IpReverseResource(name, <any>undefined, { urn })
             case "ovh:index/ipService:IpService":
                 return new IpService(name, <any>undefined, { urn })
             case "ovh:index/iploadbalancing:Iploadbalancing":
@@ -261,7 +261,7 @@ pulumi.runtime.registerResourceModule("ovh", "index/dedicatedServerUpdate", _mod
 pulumi.runtime.registerResourceModule("ovh", "index/domainZone", _module)
 pulumi.runtime.registerResourceModule("ovh", "index/domainZoneRecord", _module)
 pulumi.runtime.registerResourceModule("ovh", "index/domainZoneRedirection", _module)
-pulumi.runtime.registerResourceModule("ovh", "index/ipReverse", _module)
+pulumi.runtime.registerResourceModule("ovh", "index/ipReverseResource", _module)
 pulumi.runtime.registerResourceModule("ovh", "index/ipService", _module)
 pulumi.runtime.registerResourceModule("ovh", "index/iploadbalancing", _module)
 pulumi.runtime.registerResourceModule("ovh", "index/iploadbalancingHttpFarm", _module)

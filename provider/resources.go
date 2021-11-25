@@ -132,7 +132,7 @@ func Provider() tfbridge.ProviderInfo {
 			    "ovh_domain_zone": {Tok: makeResource(mainMod, "DomainZone")},
 			    "ovh_domain_zone_record": {Tok: makeResource(mainMod, "DomainZoneRecord")},
 			    "ovh_domain_zone_redirection": {Tok: makeResource(mainMod, "DomainZoneRedirection")},
-			    "ovh_ip_reverse": {Tok: makeResource(mainMod, "IpReverse")},
+			    "ovh_ip_reverse": {Tok: makeResource(mainMod, "ReverseIp")},
 			    "ovh_ip_service": {Tok: makeResource(mainMod, "IpService")},
 			    "ovh_iploadbalancing": {Tok: makeResource(mainMod, "Iploadbalancing")},
 			    "ovh_iploadbalancing_http_farm": {Tok: makeResource(mainMod, "IploadbalancingHttpFarm")},
